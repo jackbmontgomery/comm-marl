@@ -1,9 +1,3 @@
-#  Copyright (c) Meta Platforms, Inc. and affiliates.
-#
-#  This source code is licensed under the license found in the
-#  LICENSE file in the root directory of this source tree.
-#
-
 import os
 from pathlib import Path
 from typing import List
@@ -24,7 +18,7 @@ def run_benchmark() -> List[str]:
     experiment_config = ExperimentConfig.get_from_yaml()
     experiment_config.save_folder = Path(os.path.dirname(os.path.realpath(__file__)))
     experiment_config.loggers = []
-    experiment_config.max_n_iters = 100
+    experiment_config.max_n_iters = 10
 
     # Configure benchmark
     tasks = [VmasTask.NAVIGATION.get_from_yaml()]
@@ -85,6 +79,6 @@ if __name__ == "__main__":
     )
     Plotting.probability_of_improvement(
         environment_comparison_matrix,
-        algorithms_to_compare=[["mappo, ippo"]],
+        algorithms_to_compare=[["mappo", "ippo"]],
     )
     plt.show()

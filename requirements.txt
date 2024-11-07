@@ -1,4 +1,6 @@
 torchrl
 benchmarl
 matplotlib
-VmasTask
+vmas
+id-marl-eval
+numpy==1.26.4

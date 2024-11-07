@@ -84,6 +84,8 @@ The strategy for this project is to introduce the reader to the results within t
 
 The distinction between emergence of language MARL with communication is 
 
+\newpage
+
 \section{Reinforcement Learning (RL)}
 
 Reinforcement learning, much like machine learning, refers to both a problem as well as a class of solutions \citep{sutton2018reinforcement}. Reinforcement learning problems involve learning what to do - how to map situations to actions - so as to maximise a numerical reward signal. In an essential way they are closed-loop problems because the learning system’s actions influence its later inputs. Moreover, the learner is not told which actions to take, as in many forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These three characteristics - being closed - loop in an essential way, not having direct instructions as to what actions to take, and where the consequences of actions, including reward signals, play out over extended time periods - are the three most important distinguishing features of reinforcement learning problems.
@@ -496,6 +498,8 @@ The clipping function limits the change in $r(\theta)$ within the interval $[1 -
 
 In practice, PPO achieves a robust performance by iteratively sampling trajectories, estimating the advantage values using the critic, and optimising the clipped objective to update the actor network. The simplicity and effectiveness of PPO have made it a popular choice for many reinforcement learning tasks where stability and performance are critical considerations.
 
+\newpage
+
 \section{Multi-Agent Reinforcement Learning (MARL)}
 
 While single-agent reinforcement learning has achieved significant success, many real-world problems involve multiple interacting agents, which are collectively referred to as \textit{multi-agent systems}. These systems require agents to collaborate or compete to achieve complex objectives. For instance, in smart power grids, agents coordinate to manage electricity distribution by synchronising generators, storage, utilities, and consumers, enabling the integration of renewable energy sources. In disaster rescue scenarios, autonomous robots work together to map disaster areas, locate survivors, and deliver essential supplies. In this chapter, we will extend the tools developed for single-agent reinforcement learning to tackle the unique challenges of multi-agent systems, exploring methods for effective coordination, competition, and resource sharing among agents.
@@ -610,6 +614,8 @@ MAPPO achieved strong results in both final returns and sample efficiency metric
 \
 
 MAPPO too falls under the category of CTDE, since the centralised critic (value) network is only used during learning, while each agent then uses the learnt policy network to used in a decentralised fashion during execution. The key difference between the implementation of IPPO and MAPPO is the centralised critic network.
+
+\newpage
 
 \section{MARL with Communication}
 
@@ -806,7 +812,7 @@ This dimension focuses on how to utilise the collected experiences (such as obse
 
 \paragraph{Decentralised Learning} In decentralised learning the agent only has access to local observations and chooses actions based on these observations. Within Comm-MARL, the agents have access to messages that may communicated to them. In this sense, there may be information in those messages that is not in the immediate proximity of that agent. In NeurComm \citep{chu2020NeurComm} this training regiment is used. Where global information can be present through cascaded neighbourhood communications.
 
-\section{Results}
+\newpage
 
 \section{Conclusion}
 
@@ -826,6 +832,7 @@ Both \textbf{r}einforced \textbf{i}nter-\textbf{a}gent learning (RIAL) and \text
 
 \
 
+%TODO: Finish this off 
 The foundations for this model are in Deep Q-Networks, Deep Recurrent Q-Networks and Independent Q-learning outlined in sections ... respectively. With a key difference being the disabling of the experience replay in the RIAL and DIAL models, since it was found that the non-stationarity of the multi-agent environment meant the agent was learning from obsolete and misleading data in the experience replay. The specific training and execution configuration considering in these models is one of centralised training and decentralising execution. What's more, is that only discrete messages are considered in these models. 
 
 
@@ -833,9 +840,9 @@ The foundations for this model are in Deep Q-Networks, Deep Recurrent Q-Networks
 
 \paragraph{Parameter Sharing} RIAL can be extended to take advantage of the opportunity for centralised learning by sharing parameters among the agents. This variation learns only one network, which is used by all agents. However, the agents can still behave differently because they receive different observations and thus evolve different hidden states. In addition, each agent receives its own index a as input, allowing them to specialise.
 
-%TODO: Need to mention the C-Net here
+\paragraph{DIAL} While RIAL can share parameters among agents, it still does not take full advantage of centralised learning. In particular, the agents do not give each other feedback about their communication actions. Contrast this with human communication, which is rich with tight feedback loops. The main insight behind DIAL is that the combination of centralised learning and Q-networks makes it possible, not only to share parameters but to push gradients from one agent to another through the communication channel. DIAL achieves this with the use of the C-net (Communication network) instead of the Q-network. The C-network also outputs communication vectors, as well as action vectors from local observations. This adjustment, along with the parameter sharing between agents' networks, let gradients flow from one agent to another. This enables a richer feedback loop, reducing the required amount of learning by trial and error, and easing the discovery of effective protocols. The end-to-end differentiability is violated with the discrete nature of the messages. To navigate this, \citet{foerster2016learning} propose the DRU (discretise and regularise unit) for messages to pass through before being received by other agents. The DRU has separate functions during training and execution. In training, the DRU is tasks with encouraging the agents to learn protocols that can be easily discretised. This is done by passing the message through a sigmoid activation function and to add noise. Then during execution the messages are discretise by the DRU: $DRU(m_t^a) = 1\chi_{\{ m_t^a > 0 \}}$, where $\chi$ is the indicator function.
 
-\paragraph{DIAL} While RIAL can share parameters among agents, it still does not take full advantage of centralised learning. In particular, the agents do not give each other feedback about their communication actions. Contrast this with human communication, which is rich with tight feedback loops. The main insight behind DIAL is that the combination of centralised learning and Q-networks makes it possible, not only to share parameters but to push gradients from one agent to another through the communication channel. Thus, while RIAL is end-to-end trainable within each agent, DIAL is end-to-end trainable across agents. Letting gradients flow from one agent to another gives them richer feedback, reducing the required amount of learning by trial and error, and easing the discovery of effective protocols. The end-to-end differentiability is violated with the discrete nature of the messages. To navigate this, \citet{foerster2016learning} propose the DRU (discretise and regularise unit) for messages to pass through before being received by other agents. The DRU has separate functions during training and execution. In training, the DRU is tasks with encouraging the agents to learn protocols that can be easily discretised. This is done by passing the message through a sigmoid activation function and to add noise. Then during execution the messages are discretise by the DRU: $DRU(m_t^a) = 1\chi_{\{ m_t^a > 0 \}}$, where $\chi$ is the indicator function.
+\
 
 \begin{figure}
 	\centering
@@ -871,50 +878,77 @@ $$
 
 \subsection{CommNet}
 
-\citet{sukhbaatar2016commnet} propose the communication neural network (CommNet) model which is centred around the global controller, $\Phi$, that is used for the computation of the actions as well as the computation of the messages. The controller maps the concatenation of all states at a point in time, $\mathbf{s} = \{ s_1, \hdots, s_J \}$\footnote{Time index is omitted for brevity}, to the concatenation of all actions, $\mathbf{a} = \{ a_1, \hdots, a_J \}$, for $J$ agents. Thus, $\mathbf{a} = \Phi(\mathbf{s})$. 
+\citet{sukhbaatar2016commnet} propose the communication neural network (CommNet) model which is centred around the global controller, $\Phi$, that is used for the computation of the actions as well as the computation of the messages. Unlike, \citet{foerster2016learning} these messages are continuous vectors. The controller maps the concatenation of all local observations at a point in time, $\mathbf{s} = \{ o_1, \hdots, o_J \}$\footnote{Time index is omitted for brevity}, to the concatenation of all actions, $\mathbf{a} = \{ a_1, \hdots, a_J \}$, for $J$ agents. Thus, $\mathbf{a} = \Phi(\mathbf{s})$. 
 
 \
 
 The structure of the controller is of the form of a neural network comprised of modules, $f^i$, for each communication step $i$. The modules take as input the hidden state $h^i_j$ and the communication $c^i_j$,  and outputs a vector $h^{i+1}_j$. The main body of the model then takes as input the concatenated vectors $\mathbf{h}^i = [h^i_1, \hdots,  h^i_J]$, and computes:
 
-\begin{align*}
+
+\begin{equation}\label{eq:commnet_equations}
+\begin{aligned}
 	h_j^{i+1} &= f^i(h^i_j, c^i_j) \\
 	c_j^{i+1} &= \frac{1}{1 - J} \sum_{j' \neq j} h_{j'}^{i + 1}
-\end{align*}
+\end{aligned}
+\end{equation}
 
-$f^i$ is a single layer neural network with a non-linearity $\sigma$. In which case, $f^i(h^i_j, c^i_j) = \sigma(H^i h^i_j +  C^i c^i_j)$. 
+$f^i$ is a single layer neural network with a non-linearity $\sigma$. In which case, $f^i(h^i_j, c^i_j) = \sigma(H^i h^i_j +  C^i c^i_j)$. The use of the normalisation for the messages is due to the fact that the number of agents can increase, in such a case we then rescale the communication vector.
 
-At the first layer of the model an encoder function $h_j^0 = r(s_j)$ is used. This takes as input state-view $s_j$ and outputs feature vector $h_j^0$ (in $R_{d_0}$ for some $d_0$). The form of the encoder is problem dependent,  but for most of our tasks it is a single layer neural network. Unless otherwise noted, $c_j^0 = 0$ for all j.  At the output of the model, a decoder function $q(h_j^K)$ is used to output a distribution over the space of  actions. $q(\cdot)$ takes the form of a single layer network, followed by a softmax. To produce a discrete  action, we sample from this distribution: $a_j \sim q(h_j^K )$.  Thus the entire model (shown in Figure \ref{fig:commnet})takes the state-view of all agents s, passes it through the encoder $h0 = r(s)$, (ii) iterates $h$ and $c$ to obtain $h^K$, (iii) samples actions $a$ for all agents, according to $q(h^K)$.
+\
 
-%TODO: Caption below 
+At the first layer of the model an encoder function $h_j^0 = r(s_j)$ is used. This takes as input the local observation $o_j$ and outputs feature vector $h_j^0$ (in $R_{d_0}$ for some $d_0$). The form of the encoder is problem dependent,  but for most of our tasks it is a single layer neural network with $c_j^0 = 0$ for all $j$.  
+
+\
+
+Each layer of the model corresponds to a communication step in the language of the paper. In these layers the computations highlighted in (\ref{eq:commnet_equations}) where the new hidden layers, and messages there after are computed.
+
+\
+
+At the output of the model, a decoder function $q(h_j^K)$ is used to output a distribution over the space of  actions. $q(\cdot)$ takes the form of a single layer network, followed by a softmax. To produce a discrete  action, we sample from this distribution: $a_j \sim q(h_j^K )$.  
+
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.5]{images/commnet.png}
-	\caption{Image from \citet{sukhbaatar2016commnet}}
+	\caption{Architecture of the central controller of CommNet \citep{sukhbaatar2016commnet}}
 	\label{fig:commnet}
 \end{figure}
 
+\
+
+Modifications and extension were proposed to the model. These include:
+\begin{itemize}
+	\item Local connectivity where the message communication to the agent is computed based on the value of local hidden states. In which case, a network of agent's are formed and the passing of the aggregated hidden states corresponds to Belief Propagation. \citep{pearl1982bayes}
+	\item Skipping connections where the first input encoding $h_0^j$ is present for inputs beyond the next communication step.
+	\item Temporal recurrence where a connection between the modules is created between time-steps. In which case the final hidden states is fed as input into the initial input encoding in the next time-step. 
+\end{itemize}
+
 \subsection{IC3Net}
 
-Individualized Controlled Continuous Communication Model (IC3Net) is a model proposed by \citet{singh2018ic3net} and represents an extension to the CommNet model \citep{sukhbaatar2016commnet}. The model is novel in that it is proposed to work in a competitive, mixed and cooperative environment by using a gating mechanism in order to determine whether to block communication between agents. In this sense the model is also learning when to communicate, as well as what to communicate.
+Individualised Controlled Continuous Communication Model (IC3Net) is a model proposed by \citet{singh2018ic3net} and represents an extension to the CommNet model \citep{sukhbaatar2016commnet}. The model's extension's are centred around a gating mechanism for the messages that the agent communicate. This allows agent's to not only learn to communicate, but learn when to communicate. As such, then mechanism allows the CommNet \citep{sukhbaatar2016commnet} to be extended to mixed and cooperative environments. 
 
-%TODO: Caption below 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.5]{images/ic3net.png}
-	\caption{Image from \citet{singh2018ic3net} highlighting the architecture of of the IC3Net.}
+	\caption{Architecture of IC3Net \citep{singh2018ic3net}. \textbf{Left}: Depicts the computational dependencies between the components of the model that an agent possess for a single communication step. \textbf{Right:} Depicts the relationship between the objects in the environment and the agents.}
 	\label{fig:ic3net.png}
 \end{figure}
 
+\
 
-IC3Net is based on an independent controller model where each agent is controlled by an individual LSTM. For the $j-th$ agent, its policy takes the form of:
+IC3Net is based on an independent controller model where each agent is controlled by an individual LSTM \citep{hochreiter1997long}. For the $j-th$ agent, its policy takes the form of:
 
-\begin{align*}
-h_j^{t + 1} &= LSTM(e(o_j^t), h_j^t, s_j^t)
-a^t_j &= \pi(h^t_j)
-\end{align*}
+\begin{equation}
+	\begin{aligned}
+		h_j^{t + 1} &= LSTM(e(o_j^t), h_j^t, s_j^t) \\
+		a^t_j &= \pi(h^t_j)
+	\end{aligned}
+\end{equation}
 
-where $o_j^t$ is the observation of the $j-th$ agent at time $t$, $e(\cdot)$ is an encoder function parameterised by a fully-connected neural network and π is an agent’s action policy. Also, $h^t_j$ and $s^t_j$ are the hidden and cell states of the LSTM. We use the same LSTM model for all agents, sharing their parameters. IC3Net extends the independent controller model by allowing agents to communicate their internals states, gated by discrete action. The policy of the $j-th$ agent is given by:
+where $o_j^t$ is the observation of the $j-th$ agent at time $t$, $e(\cdot)$ is an encoder function parameterised by a fully-connected neural network and $\pi$ is an agent’s action policy, $h^t_j$ and $s^t_j$ are the hidden and cell states of the LSTM. The same LSTM model is used for all agents, therefore engaging in parameter sharing. This way, the model is invariant to permutations of the agents. \citep{singh2018ic3net}
+
+\
+
+IC3Net extends the independent controller model by allowing agents to communicate their internals states, gated by discrete action. The policy of the $j-th$ agent is given by:
 
 \begin{align*}
     g_j^{t+1} &= f^g\left(h_j^t\right) \\
@@ -925,6 +959,13 @@ where $o_j^t$ is the observation of the $j-th$ agent at time $t$, $e(\cdot)$ is 
 
 where $c^t_j$ is the communication vector for the $j-th$ agent, $C$ is a linear transformation matrix for transforming gated average hidden state to a communication tensor, $J$ is the number of alive agents currently present in the system and $f^g(\cdot)$ is a simple network containing a soft-max layer for 2 actions (communicate or not) on top of a linear layer with non-linearity. The binary action $g^t_j$ specifies whether agent $j$ wants to communicate with others, and act as a gating function when calculating the communication vector. Note that the gating action for next time-step is calculated at current time-step. The action policy $\pi$ and the gating function $f^g$ with REINFORCE \cite{williams1992simple}.
 
+\
+
+In Commnet \citep{sukhbaatar2016commnet} individual networks controlling agents were interconnected, and they as a whole were considered as a single, large neural network. This single network controller approach required a definition of a unified loss function during training, thus making it impossible to train agents with different rewards. 
+
+\
+
+In IC3Net, they move away from the single big network controller approach. Instead, they consider multiple big networks with shared parameters each controlling a single agent separately. Each big network consists of multiple LSTM networks, each processing an observation of a single agent. However, only one of the LSTMs needs to output an action because the big network is only controlling a single agent. Although this view has a little effect on the implementation - since a single neural network was still used in practice - it allows them to train each agent to maximise their individual reward instead of a single global reward. This has two benefits: firstly, it allows the model to be applied to both cooperative and competitive scenarios, secondly, it also helps resolve the credit assignment issue faced by many multi-agent algorithms. 
 
 \subsection{BiCNet}
 
@@ -982,11 +1023,11 @@ The communication phase is prior-decision, so only $h_{i,t−1}$ and $\pi_{i,t�
 
 \subsection{HAMMER}
 
-The Heterogeneous Agents Mastering Messaging to Enhance Reinforcement learning (HAMMER) \citep{gupta2022HAMMER} presents an architecture based on independent learners and a global learner. The independent learners are the agents performing actions in the environment, while the central learner serves as a proxy for generating messages that aid coordination among these agents.
+The Heterogeneous Agents Mastering Messaging to Enhance Reinforcement learning (HAMMER) \citep{gupta2022HAMMER} presents an architecture based on local learners and a central learner. The local learners are the agents performing actions in the environment, while the central learner serves as a proxy for generating messages that aid coordination among these agents. 
 
 \
 
-At the start of each time step, the central agent receives the observations of all agents, denoted as $\mathbf{s^t} = [o_1^t, \hdots, o_j^t]$, where $o_j^t$ represents the observation of agent $j$ at time $t$. The central agent processes this combined observation and outputs a personalized message $m_i^t$ for each agent $i$. Each independent agent then combines its local observation $o_i^t$ with the received message $m_i^t$ to inform its action selection within the environment. These dynamics are illustrated in Figure \ref{fig:hammer}.
+At the start of each time step, the central agent receives the observations of all agents, denoted as $\mathbf{s^t} = [o_1^t, \hdots, o_j^t]$, where $o_j^t$ represents the observation of agent $j$ at time $t$. The central agent processes this combined observation and outputs a personalised message $m_i^t$ for each agent $i$. These messages represent the actions that the central learner is able to take at each time step. Each independent agent then combines its local observation $o_i^t$ with the received message $m_i^t$ to inform its action selection within the environment. The agent then receives its reward feedback from the environment. These dynamics are illustrated in Figure \ref{fig:hammer}.
 
 \begin{figure}
 	\centering
@@ -997,15 +1038,20 @@ At the start of each time step, the central agent receives the observations of a
 
 \
 
-The independent agents implement Proximal Policy Optimisation (PPO) \citep{schulman2017proximal} as their reinforcement learning model. To ensure consistent policy updates and computational efficiency, the independent agents use \textit{parameter sharing}, where a single network with shared parameters represents the policies of all agents. This shared network structure enables experience collected by each agent to contribute toward updating a common policy.
+The independent agents implement Proximal Policy Optimisation (PPO) \citep{schulman2017proximal} as their reinforcement learning model. To ensure consistent policy updates and computational efficiency, the local agents use \textit{parameter sharing}, where a single network with shared parameters represents the policies of all agents. This shared network structure enables experience collected by each agent to contribute toward updating a common policy. During learning, the agent is constructing a policy based on the input from the local observation, as well as the messages it receives which enables the agent to learn to potentially ignore the messages if the gradients determine the content of the message is not useful for actions within the environment. 
 
 \
 
-To further stabilise training, HAMMER employs \textit{experience replay} with two separate memory buffers: one for the independent agents and one for the central agent. The replay buffers store experiences, allowing the central and independent agents to sample past interactions during updates. This approach enhances sample efficiency and reduces variance in the learning process.
+The central agent learning is implemented in two different ways:
+\begin{enumerate}
+    \item The agent can learn from the rewards received by local agents as the gradient signal
+    \item Gradients computed by the local agent's during learning - that is done by connecting the output of the central agent's network to the input of the local agents policy network
+\end{enumerate}
 
+These two learning paradigms represent a reinforced vs a differentiable approach to learning the communication protocol, similar to the distinction between RIAL and DIAL in \citet{foerster2016learning}. What's more, the third implementation of HAMMER assumes a DRU to enable discretised communication during execution, while maintaining the differentiability of the neural networks during training.
 \
 
-During training, gradients are computed with respect to both the actions chosen by each independent agent and the parameters associated with the message input from the central agent. By back-propagating these gradients through the network, the central agent’s message-generation process is fully differentiable, allowing it to adapt its messaging strategy dynamically based on feedback from the agents’ learning. Additionally, the central agent can utilise the global reward signal, aggregating the outcomes of the independent agents' actions, to further refine the message content it sends, thereby optimising coordination in the environment.
+HAMMER employs \textit{experience replay} with two separate memory buffers: one for the local agents and one for the central agent. The replay buffers store experiences, allowing the central and local agents to sample past interactions during updates. This approach enhances sample efficiency and reduces variance in the learning process.
 
 \end{document}
 
