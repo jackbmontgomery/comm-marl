@@ -1,0 +1,30 @@
+obs shape:  28
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+IDQL algorithm initialized
+IDQL initialized
+RolloutWorker initialized
+Run 1, train step 0/100000
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/main.py", line 62, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/runner.py", line 47, in run
+    wandb.log({episode_reward})
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 451, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 403, in wrapper_fn
+    return func(self, *args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 393, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1920, in log
+    self._log(data=data, step=step, commit=commit)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/wandb/sdk/wandb_run.py", line 1634, in _log
+    raise ValueError("wandb.log must be passed a dictionary")
+ValueError: wandb.log must be passed a dictionary

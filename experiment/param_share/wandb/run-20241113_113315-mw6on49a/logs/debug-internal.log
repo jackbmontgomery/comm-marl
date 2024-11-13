@@ -1,0 +1,16 @@
+{"time":"2024-11-13T11:33:15.129001+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T11:33:15.129085+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/wandb/run-20241113_113315-mw6on49a/logs/debug-core.log"}
+{"time":"2024-11-13T11:33:15.244051+02:00","level":"INFO","msg":"created new stream","id":"mw6on49a"}
+{"time":"2024-11-13T11:33:15.244083+02:00","level":"INFO","msg":"stream: started","id":"mw6on49a"}
+{"time":"2024-11-13T11:33:15.244117+02:00","level":"INFO","msg":"sender: started","stream_id":"mw6on49a"}
+{"time":"2024-11-13T11:33:15.244117+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"mw6on49a"}}
+{"time":"2024-11-13T11:33:15.244321+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"mw6on49a"}}
+{"time":"2024-11-13T11:33:15.832403+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T11:33:17.641823+02:00","level":"INFO","msg":"stream: closing","id":"mw6on49a"}
+{"time":"2024-11-13T11:33:17.642137+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T11:33:17.642951+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T11:33:18.949945+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T11:33:19.324477+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"mw6on49a"}}
+{"time":"2024-11-13T11:33:19.324493+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"mw6on49a"}}
+{"time":"2024-11-13T11:33:19.324747+02:00","level":"INFO","msg":"sender: closed","stream_id":"mw6on49a"}
+{"time":"2024-11-13T11:33:19.324931+02:00","level":"INFO","msg":"stream: closed","id":"mw6on49a"}

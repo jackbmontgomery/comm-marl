@@ -1,0 +1,56 @@
+Run 1, train step 0/500000, elapsed time: 0.00 seconds
+Run 1, train step 10043/500000, elapsed time: 13.30 seconds
+Run 1, train step 20014/500000, elapsed time: 26.64 seconds
+Run 1, train step 30091/500000, elapsed time: 39.68 seconds
+Run 1, train step 40078/500000, elapsed time: 52.32 seconds
+Run 1, train step 50078/500000, elapsed time: 64.93 seconds
+Run 1, train step 60078/500000, elapsed time: 77.48 seconds
+Run 1, train step 70078/500000, elapsed time: 90.12 seconds
+Run 1, train step 80078/500000, elapsed time: 102.93 seconds
+Run 1, train step 90078/500000, elapsed time: 115.49 seconds
+Run 1, train step 100078/500000, elapsed time: 128.40 seconds
+Run 1, train step 110078/500000, elapsed time: 140.96 seconds
+Run 1, train step 120078/500000, elapsed time: 153.45 seconds
+Run 1, train step 130078/500000, elapsed time: 166.36 seconds
+Run 1, train step 140078/500000, elapsed time: 179.12 seconds
+Run 1, train step 150078/500000, elapsed time: 193.19 seconds
+Run 1, train step 160078/500000, elapsed time: 206.56 seconds
+Run 1, train step 170078/500000, elapsed time: 219.91 seconds
+Run 1, train step 180078/500000, elapsed time: 233.18 seconds
+Run 1, train step 190078/500000, elapsed time: 246.81 seconds
+Run 1, train step 200078/500000, elapsed time: 260.14 seconds
+Run 1, train step 210078/500000, elapsed time: 274.33 seconds
+Run 1, train step 220078/500000, elapsed time: 287.75 seconds
+Run 1, train step 230078/500000, elapsed time: 301.51 seconds
+Run 1, train step 240078/500000, elapsed time: 315.04 seconds
+Run 1, train step 250078/500000, elapsed time: 328.57 seconds
+Run 1, train step 260078/500000, elapsed time: 342.07 seconds
+Run 1, train step 270078/500000, elapsed time: 355.45 seconds
+Run 1, train step 280078/500000, elapsed time: 369.43 seconds
+Run 1, train step 290078/500000, elapsed time: 382.88 seconds
+Run 1, train step 300078/500000, elapsed time: 396.24 seconds
+Run 1, train step 310078/500000, elapsed time: 409.76 seconds
+Run 1, train step 320078/500000, elapsed time: 423.30 seconds
+Run 1, train step 330078/500000, elapsed time: 436.74 seconds
+Run 1, train step 340078/500000, elapsed time: 450.82 seconds
+Run 1, train step 350078/500000, elapsed time: 464.34 seconds
+Run 1, train step 360078/500000, elapsed time: 477.56 seconds
+Run 1, train step 370078/500000, elapsed time: 490.95 seconds
+Run 1, train step 380078/500000, elapsed time: 504.40 seconds
+Run 1, train step 390078/500000, elapsed time: 519.85 seconds
+Run 1, train step 400078/500000, elapsed time: 537.24 seconds
+Run 1, train step 410078/500000, elapsed time: 554.55 seconds
+Run 1, train step 420078/500000, elapsed time: 569.61 seconds
+Run 1, train step 430078/500000, elapsed time: 583.96 seconds
+Run 1, train step 440078/500000, elapsed time: 599.18 seconds
+Run 1, train step 450078/500000, elapsed time: 613.95 seconds
+Run 1, train step 460078/500000, elapsed time: 627.96 seconds
+Run 1, train step 470078/500000, elapsed time: 641.53 seconds
+Run 1, train step 480078/500000, elapsed time: 654.99 seconds
+Run 1, train step 490078/500000, elapsed time: 669.54 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py", line 60, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 130, in run
+    self.agents.policy.save_model(train_step, end_training=True)
+TypeError: IDQL.save_model() got an unexpected keyword argument 'end_training'

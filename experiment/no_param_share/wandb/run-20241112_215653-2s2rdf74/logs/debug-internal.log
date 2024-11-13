@@ -1,0 +1,16 @@
+{"time":"2024-11-12T21:56:53.5936+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-12T21:56:53.59364+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/wandb/run-20241112_215653-2s2rdf74/logs/debug-core.log"}
+{"time":"2024-11-12T21:56:53.702359+02:00","level":"INFO","msg":"created new stream","id":"2s2rdf74"}
+{"time":"2024-11-12T21:56:53.70241+02:00","level":"INFO","msg":"stream: started","id":"2s2rdf74"}
+{"time":"2024-11-12T21:56:53.702437+02:00","level":"INFO","msg":"sender: started","stream_id":"2s2rdf74"}
+{"time":"2024-11-12T21:56:53.702431+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"2s2rdf74"}}
+{"time":"2024-11-12T21:56:53.702484+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2s2rdf74"}}
+{"time":"2024-11-12T21:56:54.119917+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-12T21:59:41.995123+02:00","level":"INFO","msg":"stream: closing","id":"2s2rdf74"}
+{"time":"2024-11-12T21:59:41.995159+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-12T21:59:41.996406+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-12T21:59:46.88248+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-12T21:59:48.446019+02:00","level":"INFO","msg":"sender: closed","stream_id":"2s2rdf74"}
+{"time":"2024-11-12T21:59:48.445993+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"2s2rdf74"}}
+{"time":"2024-11-12T21:59:48.44602+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2s2rdf74"}}
+{"time":"2024-11-12T21:59:48.447077+02:00","level":"INFO","msg":"stream: closed","id":"2s2rdf74"}

@@ -1,0 +1,16 @@
+{"time":"2024-11-13T11:30:56.592709+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T11:30:56.592769+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/wandb/run-20241113_113056-wrv3b9cy/logs/debug-core.log"}
+{"time":"2024-11-13T11:30:56.708444+02:00","level":"INFO","msg":"created new stream","id":"wrv3b9cy"}
+{"time":"2024-11-13T11:30:56.708504+02:00","level":"INFO","msg":"stream: started","id":"wrv3b9cy"}
+{"time":"2024-11-13T11:30:56.708734+02:00","level":"INFO","msg":"sender: started","stream_id":"wrv3b9cy"}
+{"time":"2024-11-13T11:30:56.708607+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"wrv3b9cy"}}
+{"time":"2024-11-13T11:30:56.708716+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"wrv3b9cy"}}
+{"time":"2024-11-13T11:30:57.201937+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T11:30:57.352486+02:00","level":"INFO","msg":"stream: closing","id":"wrv3b9cy"}
+{"time":"2024-11-13T11:30:57.352887+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T11:30:57.353543+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T11:30:59.495324+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T11:30:59.859366+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"wrv3b9cy"}}
+{"time":"2024-11-13T11:30:59.859395+02:00","level":"INFO","msg":"sender: closed","stream_id":"wrv3b9cy"}
+{"time":"2024-11-13T11:30:59.859385+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"wrv3b9cy"}}
+{"time":"2024-11-13T11:30:59.859699+02:00","level":"INFO","msg":"stream: closed","id":"wrv3b9cy"}

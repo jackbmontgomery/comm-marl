@@ -1,0 +1,25 @@
+Run 1, train step 0/10000, elapsed time: 0.00 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py", line 63, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 54, in run
+    win_rate, episode_reward = self.evaluate(epoch_num=time_steps)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 166, in evaluate
+    _, episode_reward, won, info = self.rolloutWorker.generate_episode(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/common/worker.py", line 50, in generate_episode
+    all_msgs = self.agents.get_all_messages(np.array(obs), last_action)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/agent/agent.py", line 92, in get_all_messages
+    msgs_agents = self.policy.commtest(inputs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/network/simple_comm_net.py", line 35, in forward
+    x1 = F.relu(self.fc1(inputs))
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 125, in forward
+    return F.linear(input, self.weight, self.bias)
+RuntimeError: mat1 and mat2 shapes cannot be multiplied (4x81 and 28x64)

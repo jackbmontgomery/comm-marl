@@ -1,0 +1,16 @@
+{"time":"2024-11-13T09:08:22.522075+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T09:08:22.522155+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/wandb/run-20241113_090822-r4jtua64/logs/debug-core.log"}
+{"time":"2024-11-13T09:08:22.638015+02:00","level":"INFO","msg":"created new stream","id":"r4jtua64"}
+{"time":"2024-11-13T09:08:22.63806+02:00","level":"INFO","msg":"stream: started","id":"r4jtua64"}
+{"time":"2024-11-13T09:08:22.6382+02:00","level":"INFO","msg":"sender: started","stream_id":"r4jtua64"}
+{"time":"2024-11-13T09:08:22.6382+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"r4jtua64"}}
+{"time":"2024-11-13T09:08:22.63819+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"r4jtua64"}}
+{"time":"2024-11-13T09:08:23.047515+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T09:19:46.28396+02:00","level":"INFO","msg":"stream: closing","id":"r4jtua64"}
+{"time":"2024-11-13T09:19:46.284175+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T09:19:46.286978+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T09:19:47.661353+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T09:19:48.042902+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"r4jtua64"}}
+{"time":"2024-11-13T09:19:48.042918+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"r4jtua64"}}
+{"time":"2024-11-13T09:19:48.042958+02:00","level":"INFO","msg":"sender: closed","stream_id":"r4jtua64"}
+{"time":"2024-11-13T09:19:48.043084+02:00","level":"INFO","msg":"stream: closed","id":"r4jtua64"}

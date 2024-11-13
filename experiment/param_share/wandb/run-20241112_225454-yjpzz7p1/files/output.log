@@ -1,0 +1,7 @@
+Run 1, train step 0/1000000, elapsed time: 0.00 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py", line 60, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 54, in run
+    wandb.log({"reward": episode_reward, "time_steps": time_steps})
+UnboundLocalError: local variable 'episode_reward' referenced before assignment

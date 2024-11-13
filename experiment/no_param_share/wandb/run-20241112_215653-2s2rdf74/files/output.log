@@ -1,0 +1,31 @@
+obs shape:  28
+obs shape with comm:  73
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+obs shape with comm:  73
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+obs shape with comm:  73
+IDQL algorithm initialized
+IDQL initialized
+obs shape:  28
+obs shape with comm:  73
+IDQL algorithm initialized
+IDQL initialized
+RolloutWorker initialized
+Run 1, train step 0/1000000
+Run 1, train step 10034/1000000
+Run 1, train step 20067/1000000
+Run 1, train step 30089/1000000
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/main.py", line 62, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/runner.py", line 129, in run
+    for agent_id in range(self.args.n_agents):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/agent/agent.py", line 136, in train
+    max_episode_len = self._get_max_episode_len(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/agent/agent.py", line 106, in _get_max_episode_len
+    if terminated[episode_idx, transition_idx, 0] == 1:
+KeyboardInterrupt

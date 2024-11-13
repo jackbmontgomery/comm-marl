@@ -1,0 +1,39 @@
+{
+  "os": "macOS-14.5-arm64-arm-64bit",
+  "python": "3.10.0",
+  "startedAt": "2024-11-13T10:15:09.342890Z",
+  "program": "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py",
+  "codePath": "param_share/main.py",
+  "git": {
+    "remote": "https://github.com/rafaelmp2/marl-indep-comm.git",
+    "commit": "ee6e68e5bd1313620092e056fefc73994fe6fdcb"
+  },
+  "email": "jackbmontgomery2001@gmail.com",
+  "root": "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share",
+  "host": "Jacks-MacBook-Pro-2.local",
+  "username": "jackmontgomery",
+  "executable": "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/bin/python",
+  "codePathLocal": "main.py",
+  "cpu_count": 8,
+  "cpu_count_logical": 8,
+  "disk": {
+    "/": {
+      "total": "245107195904",
+      "used": "207194218496"
+    }
+  },
+  "memory": {
+    "total": "17179869184"
+  },
+  "cpu": {
+    "count": 8,
+    "countLogical": 8
+  },
+  "apple": {
+    "name": "Apple M1",
+    "ecpuCores": 4,
+    "pcpuCores": 4,
+    "gpuCores": 8,
+    "memoryGb": 16
+  }
+}

@@ -1,0 +1,63 @@
+Run 1, train step 0/1000000, elapsed time: 0.00 seconds
+Run 1, train step 10094/1000000, elapsed time: 15.05 seconds
+Run 1, train step 20034/1000000, elapsed time: 30.01 seconds
+Run 1, train step 30038/1000000, elapsed time: 45.12 seconds
+Run 1, train step 40091/1000000, elapsed time: 60.62 seconds
+Run 1, train step 50091/1000000, elapsed time: 75.26 seconds
+Run 1, train step 60091/1000000, elapsed time: 89.65 seconds
+Run 1, train step 70091/1000000, elapsed time: 105.08 seconds
+Run 1, train step 80091/1000000, elapsed time: 119.98 seconds
+Run 1, train step 90091/1000000, elapsed time: 135.23 seconds
+Run 1, train step 100091/1000000, elapsed time: 150.95 seconds
+Run 1, train step 110091/1000000, elapsed time: 165.79 seconds
+Run 1, train step 120091/1000000, elapsed time: 181.30 seconds
+Run 1, train step 130091/1000000, elapsed time: 195.91 seconds
+Run 1, train step 140091/1000000, elapsed time: 210.51 seconds
+Run 1, train step 150091/1000000, elapsed time: 225.71 seconds
+Run 1, train step 160091/1000000, elapsed time: 241.24 seconds
+Run 1, train step 170091/1000000, elapsed time: 256.58 seconds
+Run 1, train step 180091/1000000, elapsed time: 272.02 seconds
+Run 1, train step 190091/1000000, elapsed time: 287.75 seconds
+Run 1, train step 200091/1000000, elapsed time: 302.90 seconds
+Run 1, train step 210091/1000000, elapsed time: 318.19 seconds
+Run 1, train step 220091/1000000, elapsed time: 333.47 seconds
+Run 1, train step 230091/1000000, elapsed time: 349.88 seconds
+Run 1, train step 240091/1000000, elapsed time: 365.58 seconds
+Run 1, train step 250091/1000000, elapsed time: 381.67 seconds
+Run 1, train step 260091/1000000, elapsed time: 398.25 seconds
+Run 1, train step 270091/1000000, elapsed time: 413.74 seconds
+Run 1, train step 280091/1000000, elapsed time: 429.54 seconds
+Run 1, train step 290091/1000000, elapsed time: 445.16 seconds
+Run 1, train step 300091/1000000, elapsed time: 460.64 seconds
+Run 1, train step 310091/1000000, elapsed time: 475.67 seconds
+Run 1, train step 320091/1000000, elapsed time: 490.72 seconds
+Run 1, train step 330091/1000000, elapsed time: 506.57 seconds
+Run 1, train step 340091/1000000, elapsed time: 523.34 seconds
+Run 1, train step 350091/1000000, elapsed time: 539.24 seconds
+Run 1, train step 360091/1000000, elapsed time: 555.26 seconds
+Run 1, train step 370091/1000000, elapsed time: 571.41 seconds
+Run 1, train step 380091/1000000, elapsed time: 587.80 seconds
+Run 1, train step 390091/1000000, elapsed time: 603.82 seconds
+Run 1, train step 400091/1000000, elapsed time: 620.41 seconds
+Run 1, train step 410091/1000000, elapsed time: 636.76 seconds
+Run 1, train step 420091/1000000, elapsed time: 652.00 seconds
+Run 1, train step 430091/1000000, elapsed time: 667.16 seconds
+Run 1, train step 440091/1000000, elapsed time: 682.27 seconds
+Run 1, train step 450091/1000000, elapsed time: 697.61 seconds
+Run 1, train step 460091/1000000, elapsed time: 713.08 seconds
+Run 1, train step 470091/1000000, elapsed time: 728.83 seconds
+Run 1, train step 480091/1000000, elapsed time: 745.02 seconds
+Run 1, train step 490091/1000000, elapsed time: 761.99 seconds
+Run 1, train step 500091/1000000, elapsed time: 777.83 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py", line 60, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 54, in run
+    win_rate, episode_reward = self.evaluate(epoch_num=time_steps)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 166, in evaluate
+    _, episode_reward, won, info = self.rolloutWorker.generate_episode(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/common/worker.py", line 57, in generate_episode
+    action = self.agents.choose_action(obs[agent_id], last_action[agent_id], agent_id, avail_action, epsilon, evaluate, msg_all=all_msgs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/agent/agent.py", line 67, in choose_action
+    if self.args.alg == "coma":
+KeyboardInterrupt
