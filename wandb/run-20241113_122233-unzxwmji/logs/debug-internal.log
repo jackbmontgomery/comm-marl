@@ -1,0 +1,16 @@
+{"time":"2024-11-13T12:22:33.368657+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T12:22:33.368764+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/wandb/run-20241113_122233-unzxwmji/logs/debug-core.log"}
+{"time":"2024-11-13T12:22:33.479212+02:00","level":"INFO","msg":"created new stream","id":"unzxwmji"}
+{"time":"2024-11-13T12:22:33.47925+02:00","level":"INFO","msg":"stream: started","id":"unzxwmji"}
+{"time":"2024-11-13T12:22:33.479277+02:00","level":"INFO","msg":"sender: started","stream_id":"unzxwmji"}
+{"time":"2024-11-13T12:22:33.479259+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"unzxwmji"}}
+{"time":"2024-11-13T12:22:33.479297+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"unzxwmji"}}
+{"time":"2024-11-13T12:22:33.893114+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T12:22:34.044128+02:00","level":"INFO","msg":"stream: closing","id":"unzxwmji"}
+{"time":"2024-11-13T12:22:34.044151+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T12:22:34.044539+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T12:22:39.201786+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T12:22:39.748363+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"unzxwmji"}}
+{"time":"2024-11-13T12:22:39.748383+02:00","level":"INFO","msg":"sender: closed","stream_id":"unzxwmji"}
+{"time":"2024-11-13T12:22:39.748373+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"unzxwmji"}}
+{"time":"2024-11-13T12:22:39.748527+02:00","level":"INFO","msg":"stream: closed","id":"unzxwmji"}

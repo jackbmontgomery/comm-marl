@@ -1,0 +1,8 @@
+{"time":"2024-11-13T11:36:43.733281+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T11:36:43.733346+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/wandb/run-20241113_113643-zeeosfm9/logs/debug-core.log"}
+{"time":"2024-11-13T11:36:43.842257+02:00","level":"INFO","msg":"created new stream","id":"zeeosfm9"}
+{"time":"2024-11-13T11:36:43.842307+02:00","level":"INFO","msg":"stream: started","id":"zeeosfm9"}
+{"time":"2024-11-13T11:36:43.842329+02:00","level":"INFO","msg":"sender: started","stream_id":"zeeosfm9"}
+{"time":"2024-11-13T11:36:43.842329+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zeeosfm9"}}
+{"time":"2024-11-13T11:36:43.842376+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"zeeosfm9"}}
+{"time":"2024-11-13T11:36:45.381923+02:00","level":"INFO","msg":"Starting system monitor"}

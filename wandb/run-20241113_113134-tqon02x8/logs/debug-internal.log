@@ -1,0 +1,8 @@
+{"time":"2024-11-13T11:31:34.997531+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T11:31:34.997615+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/wandb/run-20241113_113134-tqon02x8/logs/debug-core.log"}
+{"time":"2024-11-13T11:31:35.110566+02:00","level":"INFO","msg":"created new stream","id":"tqon02x8"}
+{"time":"2024-11-13T11:31:35.110612+02:00","level":"INFO","msg":"stream: started","id":"tqon02x8"}
+{"time":"2024-11-13T11:31:35.110632+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"tqon02x8"}}
+{"time":"2024-11-13T11:31:35.110803+02:00","level":"INFO","msg":"sender: started","stream_id":"tqon02x8"}
+{"time":"2024-11-13T11:31:35.110811+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tqon02x8"}}
+{"time":"2024-11-13T11:31:35.605605+02:00","level":"INFO","msg":"Starting system monitor"}

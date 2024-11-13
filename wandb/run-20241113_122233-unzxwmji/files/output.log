@@ -1,0 +1,13 @@
+Run 1, train step 0/250000, elapsed time: 0.00 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/main.py", line 65, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/runner.py", line 51, in run
+    episode_reward = self.evaluate(epoch_num=time_steps)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/runner.py", line 168, in evaluate
+    _, episode_reward, info = self.rolloutWorker.generate_episode(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/common/worker.py", line 98, in generate_episode
+    _, reward, terminated, _ = self.env.step(actions)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/ma_gym/envs/traffic_junction/traffic_junction.py", line 304, in step
+    assert all([action_i in ACTION_MEANING.keys() for action_i in agents_action]), \
+AssertionError: Invalid action found in the list of sampled actions [tensor(1), tensor(0), tensor(1), tensor(1)]. Valid actions are dict_keys([0, 1])

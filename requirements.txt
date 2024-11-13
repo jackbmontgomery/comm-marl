@@ -1,6 +1,7 @@
-torchrl
-benchmarl
+setuptools<=66
+wheel<=0.38.4
+ma-gym
+torch
 matplotlib
-vmas
-id-marl-eval
 numpy==1.26.4
+wandb

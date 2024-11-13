@@ -1,0 +1,8 @@
+{"time":"2024-11-13T11:36:18.560604+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T11:36:18.560678+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/wandb/run-20241113_113618-0ngknsol/logs/debug-core.log"}
+{"time":"2024-11-13T11:36:18.670404+02:00","level":"INFO","msg":"created new stream","id":"0ngknsol"}
+{"time":"2024-11-13T11:36:18.670438+02:00","level":"INFO","msg":"stream: started","id":"0ngknsol"}
+{"time":"2024-11-13T11:36:18.670472+02:00","level":"INFO","msg":"sender: started","stream_id":"0ngknsol"}
+{"time":"2024-11-13T11:36:18.670452+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"0ngknsol"}}
+{"time":"2024-11-13T11:36:18.670527+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"0ngknsol"}}
+{"time":"2024-11-13T11:36:19.122576+02:00","level":"INFO","msg":"Starting system monitor"}

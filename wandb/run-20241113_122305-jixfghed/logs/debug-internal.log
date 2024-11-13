@@ -1,0 +1,16 @@
+{"time":"2024-11-13T12:23:05.616675+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T12:23:05.616735+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/wandb/run-20241113_122305-jixfghed/logs/debug-core.log"}
+{"time":"2024-11-13T12:23:05.728203+02:00","level":"INFO","msg":"created new stream","id":"jixfghed"}
+{"time":"2024-11-13T12:23:05.728251+02:00","level":"INFO","msg":"stream: started","id":"jixfghed"}
+{"time":"2024-11-13T12:23:05.728293+02:00","level":"INFO","msg":"sender: started","stream_id":"jixfghed"}
+{"time":"2024-11-13T12:23:05.728276+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"jixfghed"}}
+{"time":"2024-11-13T12:23:05.728269+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"jixfghed"}}
+{"time":"2024-11-13T12:23:06.169709+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T12:35:53.208494+02:00","level":"INFO","msg":"stream: closing","id":"jixfghed"}
+{"time":"2024-11-13T12:35:53.208547+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T12:35:53.20891+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T12:35:57.231657+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T12:35:57.61033+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"jixfghed"}}
+{"time":"2024-11-13T12:35:57.610367+02:00","level":"INFO","msg":"sender: closed","stream_id":"jixfghed"}
+{"time":"2024-11-13T12:35:57.610354+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"jixfghed"}}
+{"time":"2024-11-13T12:35:57.610677+02:00","level":"INFO","msg":"stream: closed","id":"jixfghed"}

@@ -17,6 +17,7 @@
 \usepackage{cleveref}
 \usepackage[acronym]{glossaries}
 \usepackage{subcaption}
+\usepackage{bbm}
 
 \usetikzlibrary{arrows, positioning, arrows.meta}
 
@@ -70,23 +71,43 @@
 
 \section{Introduction}
 
-Multi-agent systems are ubiquitous in the modern day technological environment. Gives some examples of multi-agent systems. An approach to these intelligent systems is through multi-agent reinforcement learning. Reinforcement learning is build upon the concept of maximising a reward over a certain finite time horizon. In the sense we can consider the two components of this problem as the context or environment in which these systems operate, as well as the solution criteria that is required during the learning.
+Many real world problems can be modelled as multi-agent systems, these include autonomous-driving \citep{shavlev2016safe}, sensor networks \citep{vinyals2014sensor} and robotics \citep{kober2013reinforcement}. With the number of systems that are able to be modelled in this way only increasing in an age of ubiquitous computing power and the use of artificial intelligence agents. This begs the questions of how can a collective of autonomous agents, each capable of making its own decision, interact in this shared environment in order to achieve the goal of the system. These agents may be homogenous with shared goals, as in the case of a fleet of robots,  where each agent only benefits if the collective benefits, or different, heterogeneous agents who benefit from the other agent's failing a task. If agents do not have an understanding of the dynamics of the environment, or how rewards will be generated from the environment, can they use the experience of historical interactions to then learn these features and maximise rewards they receive. This type of behaviour is very difficult to achieve with other agents' actions also effecting the environment causing non-stationarity in the environmental dynamics, and making it more difficult for an agent to understanding what exactly caused the reward they are observing, which is the problem of credit assignment. Solving these problems and achieving these intelligent muti-agent systems is the vision of multi-agent reinforcement learning (MARL). \citep{albrecht2024marl}
 
 \
 
-A common technique that has been used in solving some of the issues that arise in Multi-agent reinforcement learning is communication. Communication protocols can serve for many different purposes and generally communication within MARL can be categorised into two sections (with some overlap). The one with solving tasks with communication, otherwise known as Comm-MARL. The other is emergent communication in MARL. Communication within the multi-agent system assists with the problem of non-stationarity, but communication protocols specified a priori require some knowledge of the field that may not be apparent to the designer of the algorithm. This is where the intersetsection of these two paradigms live - where a emergent communication is used to solve a MARL problem. That is ultimately what we will build to in this report.
+MARL is an extension of single-agent reinforcement learning (RL) \citep{sutton2018reinforcement} meaning that the MARL aims to use the framework's for modelling environments, as well as the techniques for learning agents from RL and adjust them to better suit a situation with multiple agents. RL has laid the foundation for artificial agent's learning from experience in an environment, with no (or very little) prior information about the environment. Many core ideas in reinforcement learning are inspired by phenomena in animal learning, psychology and neuroscience. \citep{subramanian2020psychological} What's more, modern approaches in RL use so called `deep' methods \citep{wang2024deep} in which neural networks are used in as function approximators for various components of a reinforcement learning model. With neural networks too being inspired from the manner in which we understand our brain to be performing computations. The human experience has been fundamental to the development of these algorithms and solution techniques, it is therefore reasonable to consider how human's solve problems with many people as motivation for the approach to take in multi-agent reinforcement learning. A fundamental mechanism for coordinating the behaviours of multiple agents, broadening their views of the environment, and to support their collaborations is communication. \citep{zhu2024survey}
 
 \
 
-The strategy for this project is to introduce the reader to the results within the single agent reinforcement paradigm that have been fundamental to the architectures proposed for communication within in the multi-agent reinforcement learning problem. Equipped with this context we can then discuss the MARL problem as well as the challenges that we are faced with when scaling from a single agent to multiple in terms of the current tools that we are equipped with from single agent RL. We will then motivate communication as a tool for solving some of these issues as well as discuss some challenges that arise with communication in MARL.
+Investigating how this communication can be realised within MARL is done in the subfield of multi-agent reinforcement learning with communication (Comm-MARL). Within Comm-MARL, we consider the structure of the communicative messages that are sent by agents, who the agent's are able to communicate with, how agent's learn to communicate, what kind of communication is encouraged by the environment etc.. Comm-MARL again builds on techniques from MARL with the additional of this dimension of communication and messages again needing to be incorporated into the frameworks and models. The goal of this report is to provide a thorough overview of the techniques of Comm-MARL, as well as investigate some of the common assumptions taken in Comm-MARL models. We aim to achieve this by placing reinforcement-learning building blocks on top of one another to ultimately land at the structure of Comm-MARL.
 
 \
 
-The distinction between emergence of language MARL with communication is 
+We will start this investigation with the foundations of RL in Section \ref{sec:rl}. We discuss the fundamental structural assumption of a system that can be solved using RL - the distinction of an environment and an agent. This structure then gives rise to the agent-environment loop for which agent learning algorithms aim to exploit in order to learn to solve the problem of the environment.  This distinction requires us to define two different sets of tools - frameworks for understanding the environment and models for solving the problem in the environment. The framework we will be considering for the environment in this report are Markov decision processes (MDP). These environment carry an assumption of the dynamics of the changing states of the environment that is used in the models we will discuss for these environments. That being said, we will then move on to discuss the two types of models we will be considering - value-based and policy based. We will then aim to build some intuition about these model categories by way of an example in a simple grid-world environment from OpenAI \textit{Gymnasium} \citep{kwiatkowski2024gymnasium} package. Finally, we will introduce the deep methods from RL that will then build the foundation for the multi-agent algorithms that are discussed later in the report.
+
+\
+
+%TODO: Need to add to this if we add to the MARL section.
+
+We can then place the MARL building block with this intuition and understanding of RL; its environmental frameworks and models. The agent-environment loop nows becomes the agent\textbf{s}-environment loops in MARL. This requires a different set of environment frameworks to understand this environment. These tools build on MDPs which include the multiple agent's, each of their local observations and the their reward structure. This is usually formalised as a partially observable stochastic game (POSG). Translating RL techniques fall on a spectrum between modelling the environment and multiple agents as a single agent where one can simply use the enlarged state and action space as the input and output to this global agent and assuming that agent's are independent actors and not considering the effect that other agent's have on the environment. These techniques, as well as other fundamental characteristics of multi-agent systems give rise to core problems of MARL which we will discuss.
+
+
+\
+
+%TODO: Add the distinction between the language subfield
+The final block we will place is communication on this knowledge we have of MARL. To overview this subfield we use the nine dimensions of Comm-MARL models identified in \citet{zhu2024survey} to compare and disambiguate size key, representative Comm-MARL algorithms: DIAL and RIAL \citep{foerster2016learning}, CommNet \citep{sukhbaatar2016commnet}, IC3Net \citep{singh2018ic3net}, BiCNet \citep{peng2017bicnet} and NeurComm \citep{chu2020NeurComm} and HAMMER \citep{gupta2022HAMMER}. The usage of these models is to give concrete examples of the different approaches that have been taken to communication. While the neural network and training schemes are not introduced for each model in this report, we have included these details in Appendix \ref{sec:models}. That being said, reading through each dimension of Comm-MARL the reader will obtain a good understanding of these models.
+
+\
+
+The final section of this report will be a practical implementation of Comm-MARL. As we will see, parameter sharing is used extensively in Comm-MARL as it is a fundamental assumption for a fully differentiable communication learning as well as allowing these models to scale to more agents. However, the practical implementation of parameter sharing is not feasible, therefore in this final section we will compare a simple MARL learning algorithm with the presence and absence of communication and parameter sharing.
+
+\
+
+This report makes no attempt to present novel findings, but rather translate, condense and discuss the field of Comm-MARL. 
 
 \newpage
 
-\section{Reinforcement Learning (RL)}
+\section{Reinforcement Learning (RL)} \label{sec:rl}
 
 Reinforcement learning, much like machine learning, refers to both a problem as well as a class of solutions \citep{sutton2018reinforcement}. Reinforcement learning problems involve learning what to do - how to map situations to actions - so as to maximise a numerical reward signal. In an essential way they are closed-loop problems because the learning system’s actions influence its later inputs. Moreover, the learner is not told which actions to take, as in many forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These three characteristics - being closed - loop in an essential way, not having direct instructions as to what actions to take, and where the consequences of actions, including reward signals, play out over extended time periods - are the three most important distinguishing features of reinforcement learning problems.
 
@@ -104,7 +125,7 @@ Specifically, the agent and the environment interact over a sequence of discrete
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.6]{images/agent_environment.png}
-	\caption{Image from \citet{sutton2018reinforcement} depicting the agent-environment loop.}
+	\caption{Agent-environment loop from \citet{sutton2018reinforcement}}
 	\label{fig:agent_environment}
 \end{figure}
 
@@ -145,26 +166,6 @@ Intuitively, a smaller value of $\gamma$ means the agent is more myopic. While a
  \end{equation}
  
  The Markov property is important in reinforcement learning because decisions and values are assumed to be a function only of the current state. In order for these to be effective and informative, the state representation must be informative. \citep{sutton2018reinforcement}
-
-%\subsection{RL Problem}
-%
-%The fundamental problem that we consider in reinforcement learning is the learn an optimal policy that chooses actions to achieve some objective, which can be the sum of the discounted expected future rewards. RL solutions seek to find this policy through repeated interaction with the environment. 
-%
-%
-%
-%The problem statement and proposed solution need more clarity. Specifically, what is a sequential decision process, what could be a solution to this and how does one learn it through repeated interaction. This first section of the paper aims to define and answers each of these questions.
-%
-%\
-%
-%A sequential decision process is defined by an agent that makes decisions over multiple time steps within an environment to achieve a specified goal. In each time step, the agent receives an observation from the environment and chooses an action. In a fully observable setting, as we assume in this chapter, the agent observes the full state of the environment; but in general, observations may be incomplete and noisy. Given the chosen action, the environment may change its state according to some transition dynamics and send a scalar reward signal to the agent. \citep{albrecht2024marl} (INSERt IMAGE)
-%
-%\
-%
-%A solution to the decision process is an optimal decision policy for the agent, which chooses actions in each state to achieve some specified learning objective. Typically, the learning objective is to maximise the expected return for the agent in each possible state.1 The return in a state when following a given policy is defined as the sum of rewards received over time from that state onward. Thus, RL assumes that the goal in the decision process can, in principle, be framed as the maximisation of expected returns.
-%
-%\
-%
-%Finally, RL algorithms learn such optimal policies by trying different actions in different states and observing the outcomes. This way of learning is sometimes described as ``trial and error'' since the actions may lead to positive or negative outcomes that are not known beforehand and, therefore, must be discovered by trying the actions. A central problem in this learning process, often called the exploration-exploitation dilemma, is how to balance exploring the outcomes of different actions versus sticking with actions that are currently believed to be best. Exploration may discover better actions but can accrue low rewards in the process, while exploitation achieves a certain level of returns but may not discover the optimal actions.
 
 \subsection{Markov decision processes}
 
@@ -270,7 +271,7 @@ What this means in the context of our joint learning problem is that we can use 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{images/eval_improve.png}
-	\caption{Image from \citet{silver2015rl} demonstrating the process of policy improvement and policy evaluation using an $\varepsilon$-greedy policy that ideally converges to the optimal policy and q-value function.}
+	\caption{ Description of the iterative policy improvement and policy evaluation using an $\varepsilon$-greedy policy.\citep{silver2015rl} Which can be proven to converge to the optimal policy in an MDP and q-value function in an MDP.}
 	\label{fig:eval_improvement}
 \end{figure}
 
@@ -563,7 +564,7 @@ Various challenges exist in multi-agent reinforcement learning that stem from as
 	\item \textbf{Scaling in number of agents} In a multi-agent system, the total number of possible action combinations between agents may grow exponentially with the number of agents. This is particularly the case if each added agent comes with its own additional action variables. For example, in level-based foraging, each agent controls a robot and adding another agent comes with its own associated action variable to control a robot. In the early days of MARL research, it was common to use only two agents to avoid issues with scaling. Even with today’s deep learning-based MARL algorithms, it is common to use a number of agents between 2 and 10. How to handle many more agents in an efficient and robust way is an important goal in MARL research.
 \end{itemize}
 
-\subsection{MARL Algorithms}
+\subsection{MARL Algorithms}\label{sec:marl_algorithms}
 
 In this section, we will examine some popular baseline MARL algorithms. These build on the single agent algorithms that were introduced and explained in Section \ref{sec:deep_rl}. 
 
@@ -572,6 +573,10 @@ In this section, we will examine some popular baseline MARL algorithms. These bu
 A basic approach one can take to extend a single-agent RL algorithm to a multi-agent algorithm is to simply ignore the influence that other agents have on the environment. This approach is called Independent Q-learning (IQL) \citep{tan1997MultiAgentRL}. In this algorithm, all agents will act completely independently.
 
 \
+
+\begin{equation}\label{eq:iql}
+	\mathcal{L}
+\end{equation}
 
 The original implementation of this algorithm was done in \citet{tan1997MultiAgentRL} where the independent learning was compared to agent's learning with communication of instantaneous information episodic experience and learned knowledge. The cooperation that was introduce using communication enabled the agent's to converge to a policy that solved the predator-prey problem. However, the problems we have mentioned with regard to MARL were present even in this early work where issues where extra sensory information was shown to interfere with learning. The communication created a larger observational space for each agent, due to this they were unable to learn a policy in this larger space. \citep{tampuu2015multiagent}
 
@@ -696,7 +701,7 @@ The ideal behaviour that this environment seeks to encourage is a protocol that 
 
 \paragraph{Cooperative with local rewards}
 
-\citet{peng2017bicnet} tested their model in StartCraft Combat games with local rewards. The idea with cooperation with local rewards is that global rewards structures can ignore the need for locally coordinating agents. This type of distinction is needed in a more complicated environment like StarCraft. It was found that agents were able to learn high level coordination strategies  like coordinated cover attack. The essence of cover attack is to let one agent draw fire or  attentions from the enemies, meanwhile, other agents take  advantage of this time period or distance gap to output more  harms. The difficulty of conducting cover attack lies in how  to arrange the sequential moves of multiple agents in a coordinated hit and run way. 
+\citet{peng2017bicnet} tested BiCNet in StartCraft Combat games with local rewards. The idea with cooperation with local rewards is that global rewards structures can ignore the need for locally coordinating agents. This type of distinction is needed in a more complicated environment like StarCraft. It was found that agents were able to learn high level coordination strategies  like coordinated cover attack. The essence of cover attack is to let one agent draw fire or  attentions from the enemies, meanwhile, other agents take  advantage of this time period or distance gap to output more  harms. The difficulty of conducting cover attack lies in how  to arrange the sequential moves of multiple agents in a coordinated hit and run way. 
 
 \paragraph{Competitive and mixed with local rewards}
 
@@ -708,18 +713,16 @@ The desired communication will naturally change depending on the reward structur
 
 \subsection{Communication Constraints}
 
-Within Comm-MARL there can be constraints placed on the communication with the model and environment. These constraints are often imposed to create an analogy within real world communication. For example, typically we consider language to be communication with a finite lexicon - similar constraints are placed on communication channels to ensure only discrete communication. Communication channels can be noisy in real life and so message signals sent can also have some Gaussian noise added to it.
+Within Comm-MARL there can be constraints placed on the communication with the model and environment. These constraints are often imposed to create an analogy within real world communication. For example, typically we consider language to be communication with a finite lexicon - discrete message constraints are placed on communication channels to create an analog to human language. Communication channels can be noisy in real life - we can talk in a crowd with literal noise in the background - and so message signals sent can also have some random fluctuation added to it.
 
-\paragraph{Constrained communication} DIAL and RIAL \citep{foerster2016learning} have a communication channel capacity introduced in the model. In the case of the Switch Riddle, this communication is channel is constrained to a single bit. This is a bandwidth constraint. In DIAL, we also have messages that have noise added to them - which is an example of a corrupted channel. The interesting feature of this channel is that the communication is through the noisy channel but the feedback is not. The DIAL model allows for message gradients to be passed from receiver to sender so in introducing noise to the message the agents are actually forced to be more confident in the sign\footnote{Sign in the mathematical sense of negative or positive} of the message they send.
+\paragraph{Constrained communication} DIAL and RIAL \citep{foerster2016learning} have a communication channel capacity introduced in the model. In the case of the Switch Riddle, this communication is channel is constrained to a single bit. This is a bandwidth constraint. In DIAL, we also have messages that have noise added to them - which is an example of a corrupted channel. The interesting feature of this channel is that the communication is through the noisy channel but the feedback is not. Similarly, in HAMMER \citep{gupta2022HAMMER} the communication protocol was trained through a noisy channel aiming to create more purposeful messages.
 
 \
 
-Both these constraints are coupled within the model since the noise is a feature of the DRU (See Appendix \ref{subsec:dial_rial} for details) which is a device introduced to force learned protocols to be easily discretised. 
-
-There are practical concerns that are associated with communication - such as communication costs. We can categorise the communication within this dimension as unconstrained or constrained. 
+These noise constrains are implemented in the discretise-regularise unit (DRU) \citep{foerster2016learning} (See Appendix \ref{subsec:dial_rial} for details). The usage of this unit was actually for training purposes rather than for simulation of human interaction. The DRU is used in models that require end-to-end differentiability in order to pass parameter gradients between neural networks, but who aim for agent's to learn discrete messages. The DRU adds noise to messages (and passing them through a sigmoid function) in order for message values that are close to 0 to be corrupted more than messages with large absolute values. The usage for these types of `confident' protocols is that they are easily discretised during execution where all messages are passed through an indicator function: $DRU(m) = \mathbbm{1}_{[0, \infty)}$ during the execution phase. 
 
 \paragraph{Unconstrained communication}
-CommNet \citep{sukhbaatar2016commnet} introduces no constraint on the message that is sent. The messages are aggregations of the internals states of each agent in the environment (apart from themselves) but there is no constraint on the size of the message that is to be sent. \citet{singh2018ic3net} is similar in this unconstraint communication channel but this model has the key feature of a learnt gating mechanism of outgoing messages. This allows agents to learn not to communicate but does not have any explicit loss attached to it and is therefore not considered to be a constraint on the communication.
+CommNet \citep{sukhbaatar2016commnet} introduces no constraint on the message that is sent. The messages are aggregations of the internals states of each agent in the environment (apart from themselves) but there is no constraint on the value of the message that is to be sent. However, these a hyper constraint given by the choice of dimension of the message. For example, in CommNet the messages are the same dimension as the hidden state. To our knowledge there has been no model that aims to learn this hyper parameter. \citet{singh2018ic3net} is similar in this unconstraint communication channel but this model has the key feature of a learnt gating mechanism of outgoing messages. This allows agents to learn not to communicate but does not have any explicit loss attached to it and is therefore not considered to be a constraint on the communication since the agent will opt in (learn) not to do it, there is no externally constraint on the communication mechanism.
 
 \subsection{Communicatee Types}
 
@@ -750,14 +753,14 @@ Where $m_{N_i}^t = \{ m_j^t : j \in N_i \}$.
 
 A communication policy defines a set of communication actions, which can be modelled in different ways. For example, a communication action can be represented as a vector of binary values, where each value indicates whether communication with one of the other agents is allowed at a certain time step. These actions form communication links between pairs of agent These policies can be learned of predefined. 
 
-\paragraph{Predefined full communication} In DIAL and RIAL \citet{foerster2016learning} the agents have full access to communicate with all other agents. When viewed as a graph - this means that each agent is connected to every other agent so any message that gets sent by one agent is broadcast to the entire network. \citet{chuster1997Bidirectional} obtains a full communication graph but through other agents. Since, the communication within this model is using recurrent connections between the hidden states of agents. Similar to recurrent connections through time, only the preceding agent is able to send a message, but the effect of the previous recurrent connection is still present in the hidden state that is being communicated. Thus, there is a sort of implicit full communication structure in this model. 
+\paragraph{Predefined full communication} In DIAL and RIAL \citet{foerster2016learning} the agents have full access to communicate with all other agents. When viewed as a graph - this means that each agent is connected to every other agent so any message that gets sent by one agent is broadcast to the entire network. BiCNet \citep{peng2017bicnet} obtains a full communication graph but through other agents. Since, the communication within this model is using recurrent connections between the hidden states of agents. Similar to recurrent connections through time, only the preceding agent is able to send a message, but the effect of the previous recurrent connection is still present in the hidden state that is being communicated. Thus, there is a sort of implicit full communication structure in this model. 
 
 \paragraph{Learnt individual control} IC3Net \citep{singh2018ic3net} has a gating mechanism that enables the agents to learn to communicate or not to communicate with a certain agent. In this sense, their communication policy is learnt during training. A crucial point is that the learning is done individually. Each agent is tasked with performing this same task. This is in contract to other models in which a global controller determines the communication policy. 
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.5]{images/communication_policies.png}
-	\caption{\citet{zhu2024survey}}
+	\caption{Architectural description of communication policies examined \citet{zhu2024survey}. }
 	\label{fig:communication_policies}
 \end{figure}
 
@@ -811,6 +814,172 @@ This dimension focuses on how to utilise the collected experiences (such as obse
 
 
 \paragraph{Decentralised Learning} In decentralised learning the agent only has access to local observations and chooses actions based on these observations. Within Comm-MARL, the agents have access to messages that may communicated to them. In this sense, there may be information in those messages that is not in the immediate proximity of that agent. In NeurComm \citep{chu2020NeurComm} this training regiment is used. Where global information can be present through cascaded neighbourhood communications.
+
+\newpage
+
+\section{Experiment}
+
+What is clear from the current state of Comm-MARL is methods that using a differentiable learning methods out perform those using a reinforced learning technique. Intuitively, this is because gradient feedback from a message is a more direct indicator of the usefulness of the message that reward feedback. Messages can be interpreted differently from agent to agent so learning to communicate in a reinforced fashion would seem to be less efficient. However, in many practical application parameter sharing is in feasible \citep{wong2022deep}. Typically, parameter sharing is done by each agent using the same neural network for training while the different observational input inducing different behaviour in a time-step. This means that agents cannot learn different policies or tasks. \citep{terry2023revisiting} This issue is often circumvented by adding an `agent input' to the neural networks, meaning that the network will input some identification of the agent. This approach is limited, however, in that without modification it does not allow parameter sharing to be applied to environments where the action spaces and/or observation spaces are heterogeneous.  
+
+\
+
+If we do not assume parameter sharing among agents can effective communication still arise? This is the question that \citet{pina2024fully} seek to answer. In this section we will examine the model used in \citet{pina2024fully} as well as  confirm the results, and discuss the implications thereof. The goal of this section is to discuss whether effective communication can be achieved without the use of parameter sharing.
+
+\subsection{Method}
+
+From the description of the goal of the experiment we can identify two different dimensions for investigation within the model: communication and parameter sharing. The presence and absence of those components creating four different cases to investigate: No parameter and no communication (NPS), no parameter sharing and communication (NPS+COMM), parameter sharing and no communication (NPS) and parameter sharing and communication (PS+COMM).
+
+%TODO: Environment description
+
+\subsection{Model}
+
+The model used in this investigation is based on the IQL model from Section \ref{sec:marl_algorithms}. Let us state again the loss function required for IQL:
+
+%TODO: Ensure that the below equation makes sense
+\begin{equation}\label{eq:iql_2}
+	\mathcal{L}(\theta) = \mathbb{E}_{b \sim B}\left[ (r + \gamma \max_{a'} Q(a', \theta^- - Q(ra; \theta) )^2 \right]
+\end{equation}
+
+
+Let us consider the environment with $N$ agents with $\mathcal{M}$ and $\mathcal{Q}$ be the set of all messages and q-values respectively. Let $f_i \to \mathcal{Q}$ and $g_i \to \mathcal{M}$. We will describe the models of each of the treatment cases individually.
+
+\paragraph{PS+COMM} We have that 
+\begin{equation}
+	\{Q_i\}_{i=1}^N =\{f_i(o_i, m_{-i}m a_i; \theta)\}_{i = 1}^N
+\end{equation}
+Where $m_{-i}$ corresponds to the message from all agents except $i$, these messages are produced by $g_i$ parameterised by $\mu$:
+
+\begin{equation}
+	m_{-i} = \{ g_j(o_j; \mu) \}^N_{j = 1, \ j \neq i} \wedge m_i = g_i(o_i; \mu) 
+\end{equation}
+As per (\ref{eq:iql_2}), we can define the loss function for the learning problem as
+\begin{equation}
+\begin{aligned}
+\mathcal{L}_i(\theta, \mu) & =r+\gamma \max _{a_i^{\prime}} Q_i\left(o_i^{\prime}, m_{-i}^{\prime}, a_i^{\prime} ; \theta^{-}\right)-Q_i\left(o_i, m_{-i}, a_i ; \theta\right) \\
+& =r+\gamma \max _{a_i^{\prime}} f_i\left(o_i^{\prime},\left\{g_j\left(o_j^{\prime} ; \mu^{-}\right)\right\}_{j=1, j \neq i}^{j=N}, a_i^{\prime} ; \theta^{-}\right) \\
+& -f_i\left(o_i,\left\{g_j\left(o_j ; \mu\right)\right\}_{j=1, j \neq i}^{j=N}, a_i ; \theta\right) .
+\end{aligned}
+\end{equation}
+
+From the above, we can write $\mathcal{L}_i(\theta, \mu) \equiv \mathcal{L}_i\left(f_i(\cdot ; \theta, \mu), g_i(\cdot ; \mu)\right)$, and then we can also write the backpropagation rules for the gradients as
+\begin{equation}
+\begin{gathered}
+\nabla_\theta \mathcal{L}_i=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \theta}=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta} \\
+\nabla_\mu \mathcal{L}_i=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu}
+\end{gathered}
+\end{equation}
+and from this, it follows that the parameters of the networks are updated as
+\begin{equation}
+\begin{gathered}
+\theta=\theta-\alpha \nabla_\theta \mathcal{L}_i=\theta-\alpha \frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta} \\
+\mu=\mu-\alpha \nabla_\mu \mathcal{L}_i=\mu-\alpha\left(\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu}\right) .
+\end{gathered}
+\end{equation}
+
+This is the standard procedure for IQL with parameter sharing. 
+
+\paragraph{NPS+COMM} We now have that:
+\begin{equation}
+\left\{Q_i\right\}_{i=1}^N=\left\{f_i\left(o_i, m_{-i}, a_i ; \theta_i\right)\right\}_{i=1}^N,
+\end{equation}
+
+where $m_{-i}$ corresponds once again to the messages from all agents except $i$, that are produced by a neural network denoted by a function $g_j$ with parameters $\mu_j$
+
+\begin{equation}\label{eq:iql_ps_message}
+m_{-i}=\left\{g_j\left(o_j ; \mu_j\right)\right\}_{j=1, j \neq i}^N \wedge m_i=g_i\left(o_i ; \mu_i\right)
+\end{equation}
+
+Similarly to (\ref{eq:iql_2}), we can define the loss function for the learning problem as
+\begin{equation}
+\begin{aligned}
+\mathcal{L}\left(\theta_i, \mu_{-i}\right) & =r+\max _{a_i^{\prime}} Q_i\left(o_i^{\prime}, m_{-i}^{\prime}, a_i^{\prime} ; \theta_i^{-}\right)-Q_i\left(o_i, m_{-i}, a_i ; \theta_i\right) \\
+& =r+\max _{a_i^{\prime}} f_i\left(o_i^{\prime},\left\{g_j\left(o_j^{\prime} ; \mu_j^{-}\right)\right\}_{j=1, j \neq i}^{j=N}, a_i^{\prime} ; \theta_i^{-}\right) \\
+& -f_i\left(o_i,\left\{g_j\left(o_j ; \mu_j\right)\right\}_{j=1, j \neq i}^{j=N}, a_i ; \theta_i\right)
+\end{aligned}
+\end{equation}
+
+Because now networks are not shared, from the above we can write:
+
+\begin{equation}
+\mathcal{L}_i\left(\theta_i, \mu_{-i}\right) \equiv \mathcal{L}_i\left(f_i\left(\cdot ; \theta_i, \mu_{-i}\right), g_{-i}\left(\cdot ; \mu_{-i}\right)\right)
+\end{equation}
+
+Thus in order to update $\mu_i$ the corresponding gradient rule in this case would have to be
+
+\begin{equation}
+\nabla_{\mu_i} \mathcal{L}_j=\frac{\partial \mathcal{L}_j}{\partial f_j} \frac{\partial f_j}{\partial \mu_i}+\frac{\partial \mathcal{L}_j}{\partial g_{-j}} \frac{\partial g_{-j}}{\mu_i}
+\end{equation}
+
+This does not make sense since agent $j$ does not share parameters with agent $i$, and thus $\mu_i$ will never be updated $\forall i \in\{1, \ldots, N\}$.
+
+\
+
+The parameters of a communication network $\mu_i$ of agent $i$ will never be updated if fully independent learners that do not share the parameters $\theta_i$ and $\mu_i$ learn only from their observations and incoming messages from the others. As a solution to this \citet{pina2024fully} propose instead the following learning scheme for independent communication:
+
+\begin{equation}\label{eq:q_iql_nps}
+\left\{Q_i\right\}_{i=1}^N=\left\{f_i\left(o_i, m_{-i}, m_i, a_i ; \theta_i\right)\right\}_{i=1}^N
+\end{equation}
+
+where $m_{-i}$ corresponds once again to the messages from all agents except $i$, that are produced by a function $g_j$ with parameters $\mu_j$, in the same way as in (\ref{eq:iql_ps_message}). $\mathcal{L}_i$ can now be written as:
+\begin{equation}
+\begin{aligned}
+& \mathcal{L}_i\left(\theta_i, \mu_{-i}, \mu_i\right)= \\
+& \quad=r+\operatorname{\gamma ax}_{a_i^{\prime}} Q_i\left(o_i^{\prime}, m_{-i}^{\prime}, m_i^{\prime}, a_i^{\prime} ; \theta_i^{-}\right)-Q_i\left(o_i, m_{-i}, m_i, a_i ; \theta_i\right) \\
+& \quad=r+\max _{a_i^{\prime}} f_i\left(o_i^{\prime},\left\{g_j\left(o_j^{\prime} ; \mu_j^{-}\right)\right\}_{j=1, j \neq i}^{j=N}, g_i\left(o_i^{\prime} ; \mu_i^{-}\right), a_i^{\prime} ; \theta_i^{-}\right) \\
+& \quad-f_i\left(o_i,\left\{g_j\left(o_j ; \mu_j\right)\right\}_{j=1, j \neq i}^{j j}, g_i\left(o_i ; \mu_i\right), a_i ; \theta_i\right),
+\end{aligned}
+\end{equation}
+
+and now, we have that $\mathcal{L}_i\left(\theta_i, \mu_{-i}, \mu_i\right) \quad \equiv$ $\mathcal{L}_i\left(f_i\left(\cdot ; \theta_i, \mu_{-i}, \mu_i\right), g_{-i}\left(\cdot ; \mu_{-i}\right), g_i\left(\cdot ; \mu_i\right)\right)$, and we can now write the rules as:
+
+\begin{equation}\label{eq:q_iql_nps}
+\begin{gathered}
+\nabla_{\theta_i} \mathcal{L}_i=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta_i}+\frac{\partial \mathcal{L}_i}{\partial g_{-i}} \frac{\partial g_{-i}}{\partial \theta_i}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \theta_i}=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta_i}, \\
+\nabla_{\mu_i} \mathcal{L}_i=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_i}+\frac{\partial \mathcal{L}_i}{\partial g_{-i}} \frac{\partial g_{-i}}{\partial \mu_i}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu_i}=\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_i}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu_i} .
+\end{gathered}
+\end{equation}
+
+Intuitively, this step solves the problem stated in Remark 1. However, now when doing the final rule, it is implied that
+\begin{equation}\label{eq:other_gradient_update}
+\begin{aligned}
+\nabla_{\mu_{-i}} \mathcal{L}_i & =\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_{-i}}+\frac{\partial \mathcal{L}_i}{\partial g_{-i}} \frac{\partial g_{-i}}{\partial \mu_{-i}}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu_{-i}} \\
+& =\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_{-i}}+\frac{\partial \mathcal{L}_i}{\partial g_{-i}} \frac{\partial g_{-i}}{\partial \mu_{-i}}
+\end{aligned}
+\end{equation}
+
+From (\ref{eq:other_gradient_update}), we note the existence of a second problem (that is independent of our solution to the problem in Remark 1), since $\mu_{-i}$ would be updated as
+\begin{equation}
+\mu_{-i}=\mu_{-i}-\alpha\left(\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_{-i}}+\frac{\partial \mathcal{L}_i}{\partial g_{-i}} \frac{\partial g_{-i}}{\partial \mu_{-i}}\right),
+\end{equation}
+for $N$ times, causing losses of gradient when propagating through the same values several times.
+
+\
+
+If fully independent agents that do not share the parameters $\theta_i$ and $\mu_i$ of their networks learn from the messages of the others, then the incoming messages will be used for backpropagation $N$ times, causing problems in the computational graph. To overcome the problem, for each agent $i$, we detach $m_{-i}$ from the computational graph, ensuring that all $\theta_i \wedge \mu_i, i \in\{1, \ldots, N\}$ are updated exactly once, according to:
+\begin{equation}
+\begin{gathered}
+\theta_i=\theta_i-\alpha \frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \theta_i}\\
+\mu_i=\mu_i-\alpha\left(\frac{\partial \mathcal{L}_i}{\partial f_i} \frac{\partial f_i}{\partial \mu_i}+\frac{\partial \mathcal{L}_i}{\partial g_i} \frac{\partial g_i}{\partial \mu_i}\right)
+\end{gathered}
+\end{equation}
+
+As per (\ref{eq:q_iql_nps}). With this learning scheme, which can be summarised by (\ref{eq:q_iql_nps}), we solve both problems described in Remarks 1 and 2 that occur in fully independent learning with communication and without parameter sharing. This scheme allows all the parameters to be updated, enabling learning with communication. In the results section ahead, we show that the agents that follow this configuration are still able to learn communication strategies.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{images/nps_comm.png}
+	\caption{Illustration of how the proposed scheme for independent communication without parameter sharing (NPS+COMM) \citep{pina2024fully} works when compared to sharing parameters (PS). The figure shows that agents that do not share parameters also need to receive their own message as input to keep the link to the computational graph of their communication network during backpropagation.}
+	\label{fig:nps_comm}
+\end{figure}
+
+%TODO: Please this within the context of the dimension mentioned in the previous section
+
+\subsection{Results}
+
+%TODO: Need to finish results section
+
+\subsection{Discussion}
+
 
 \newpage
 
@@ -969,14 +1138,14 @@ In IC3Net, they move away from the single big network controller approach. Inste
 
 \subsection{BiCNet}
 
-Multiagent Bidirectionally-Coordinated Net (BiCNet) is a model that leverages a bidirectional Recurrent Neural Network (bi-RNN) \citep{chuster1997Bidirectional}. The model was proposed in \citet{peng2017bicnet} and facilitates information exchange between agents to improve the efficacy and efficiency of the learned communication protocol. Each agent has its own ``policy'' (actor) and ``Q'' (critic) network for learning actions and state values, respectively, and both use bi-RNNs to enable communication between agents.
+Multi-agent Bidirectionally-Coordinated Net (BiCNet) \citep{peng2017bicnet} is a model that leverages a bidirectional Recurrent Neural Network (bi-RNN) \citep{chuster1997Bidirectional} to facilitate the communication. While learning is done using a multi-agent actor-critic framework. Further, BiCNet leverges parameter sharing in order to to solve scalability issues with respect to increasing the number of agent.
 
 \
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.5]{images/bicnet}
-	\caption{Image from \citet{peng2017bicnet} highlighting the architecture of of the BiCNet.}
+	\caption{Architecture of the actor network (Left) and critic network (Right) for BiCNet \citep{peng2017bicnet}}
 	\label{fig:ic3net.png}
 \end{figure}
 
@@ -984,7 +1153,7 @@ BiCNet shares parameters across agents to ensure that the model is compact and s
 
 \
 
-Training employs backpropagation through time (BPTT) over the bi-RNN structure, calculating gradients jointly across the actor and critic networks. Specifically:
+Training employs backpropagation through time \citep{werbos1990backpropagation} over the bi-RNN structure, calculating gradients jointly across the actor and critic networks. Specifically:
 
 \begin{itemize}
     \item \textbf{Actor Gradient:} A multi-agent deterministic policy gradient is applied to optimise the actor, where each agent’s policy is collectively learned across agents, leading to aggregate reward optimisation.
@@ -996,11 +1165,15 @@ Training employs backpropagation through time (BPTT) over the bi-RNN structure, 
     \item \textbf{Exploration with Ornstein-Uhlenbeck Process:} To add stochasticity during training, the model applies noise to the actor's actions, facilitating better exploration, especially in continuous action spaces.
 \end{itemize}
 
-\textbf{Message Encoding through Hidden States:} In BiCNet, communication occurs through hidden states passed between agents in the bi-RNN layers. This process allows each agent to integrate information from others and decide actions based on both local and shared states.
+\textbf{Message Encoding through Hidden States:} In BiCNet, communication occurs through hidden states passed between agents in the bi-RNN layers. In other words, this communication is done in the latent space. This process allows each agent to integrate information from others and decide actions based on both local states and shared communication, while not conditioning their actions directly on the actions of other agents meaning that high-level information can be passed between agents \citep{peng2017bicnet}.
 
 \subsection{NeurComm}
 
-NeurComm \citep{chu2020NeurComm} is a communication model that exploits the spatiotemporal dimension of the MARL problem. The Markov property is then assumed to be present in both the spatial and temporal dimensions. All messages sent from agent $i$ in this model are assumed to be equal: $m_{ij} = m_i, \ \forall j \in \mathcal{N}_i$. Then:
+NeurComm \citep{chu2020NeurComm} is a model that positions itself within the subfield of networked multi-agent reinforcement learning (NMARL). Which is a paradigm of MARL that assumes communication channels between local connected neighbours. These connections then form the network of agents ($\mathcal{N}_i$ will denote the neighbourhood of agent $i$). NeurComm \citep{chu2020NeurComm}  exploits the spatiotemporal dimension of this network. The Markov property is then assumed to be present in both the spatial and temporal dimensions. 
+
+\
+
+To illustrate the messaging protocol let us assume all messages sent from agent $i$ in this model are assumed to be equal: $m_{ij} = m_i, \ \forall j \in \mathcal{N}_i$. Then:
 
 \begin{equation}
 	h_{i, t} = g_{\nu_i} (h_{i, t-1}, e_{\lambda_i^s}(s_{\mathcal{V}_i, t}), e_{\lambda_i^p}(\pi_{\mathcal{N}_i, t-1}), e_{\lambda_i^h}(h_{\mathcal{N}_i, t-1}))
@@ -1012,12 +1185,16 @@ Where $h_{i, t}$ is the hidden state of agent $i$ at time $t$. $e_{\lambda_i}$ a
 	m_{i,t} = s_{i,t} \cup \pi_{i,t−1} \cup h_{i,t−1}
 \end{equation}
 
-The communication phase is prior-decision, so only $h_{i,t−1}$ and $\pi_{i,t−1}$ are available.
+The communication phase is prior-decision, so only $h_{i,t−1}$ and $\pi_{i,t−1}$ are available. Described is a single pass of communication, but it can easily be extended to multiple passes. 
+
+\
+
+NeurComm can be represented using a single meta-DNN since all agents are connected by differentiable communication links, and $\tilde{s}_i$ are the intermediate outputs after communication layers. Figure \ref{fig:neurcomm} (Left) illustrates the forward propagations inside each individual agent and \ref{fig:neurcomm} (Right) shows the broader multi-step spatiotemporal propagations. The gradient propagation of this meta-DNN is decentralised based on each local loss signal. As time advances, the involved parameters in each propagation expand spatially in the meta-DNN, due to the cascaded neighbourhood communication.
 
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.5]{images/neurcomm}
-	\caption{Image from \citet{chu2020NeurComm} highlighting the architecture of of the NeurComm.}
+	\caption{Neural network architecture of \citet{chu2020NeurComm} showing forward propagations illustrated in a queueing system. (Left): Single-step forward propagations inside agent $i$. Different coloured boxes and arrows show different outputs and functions, respectively. Solid and dashed arrows indicate actor and critic propagations, respectively. (Right): Multi-step forward propagations for updating the belief of agent $i$.}
 	\label{fig:neurcomm}
 \end{figure}
 
