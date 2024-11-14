@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:01:28.226669+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:01:28.226794+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230128-nliextji/logs/debug-core.log"}
+{"time":"2024-11-13T23:01:28.338807+02:00","level":"INFO","msg":"created new stream","id":"nliextji"}
+{"time":"2024-11-13T23:01:28.338857+02:00","level":"INFO","msg":"stream: started","id":"nliextji"}
+{"time":"2024-11-13T23:01:28.338878+02:00","level":"INFO","msg":"sender: started","stream_id":"nliextji"}
+{"time":"2024-11-13T23:01:28.338865+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"nliextji"}}
+{"time":"2024-11-13T23:01:28.338947+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nliextji"}}
+{"time":"2024-11-13T23:01:28.793954+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:01:32.983521+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:01:32.983837+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:01:33.985752+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.719116167},{"desc":"uploading config.yaml","runtime_seconds":0.392653792,"progress":"1.5KB/1.5KB"},{"desc":"uploading output.log","runtime_seconds":0.392627625,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:01:35.022122+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:01:36.423096+02:00","level":"INFO","msg":"stream: closing","id":"nliextji"}
+{"time":"2024-11-13T23:01:36.423165+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"nliextji"}}
+{"time":"2024-11-13T23:01:36.423213+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nliextji"}}
+{"time":"2024-11-13T23:01:36.423223+02:00","level":"INFO","msg":"sender: closed","stream_id":"nliextji"}
+{"time":"2024-11-13T23:01:36.423529+02:00","level":"INFO","msg":"stream: closed","id":"nliextji"}

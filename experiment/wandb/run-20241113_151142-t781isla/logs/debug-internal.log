@@ -1,0 +1,17 @@
+{"time":"2024-11-13T15:11:42.119812+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T15:11:42.119887+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_151142-t781isla/logs/debug-core.log"}
+{"time":"2024-11-13T15:11:42.231045+02:00","level":"INFO","msg":"created new stream","id":"t781isla"}
+{"time":"2024-11-13T15:11:42.231086+02:00","level":"INFO","msg":"stream: started","id":"t781isla"}
+{"time":"2024-11-13T15:11:42.231107+02:00","level":"INFO","msg":"sender: started","stream_id":"t781isla"}
+{"time":"2024-11-13T15:11:42.231093+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"t781isla"}}
+{"time":"2024-11-13T15:11:42.231139+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"t781isla"}}
+{"time":"2024-11-13T15:11:42.679604+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T15:56:00.58804+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.3.137:54253->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2024-11-13T16:06:09.091057+02:00","level":"INFO","msg":"stream: closing","id":"t781isla"}
+{"time":"2024-11-13T16:06:09.091106+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T16:06:09.091764+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T16:06:10.499958+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T16:06:10.88903+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"t781isla"}}
+{"time":"2024-11-13T16:06:10.889099+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"t781isla"}}
+{"time":"2024-11-13T16:06:10.889131+02:00","level":"INFO","msg":"sender: closed","stream_id":"t781isla"}
+{"time":"2024-11-13T16:06:10.889537+02:00","level":"INFO","msg":"stream: closed","id":"t781isla"}

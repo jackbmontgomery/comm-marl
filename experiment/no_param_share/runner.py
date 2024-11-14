@@ -126,6 +126,7 @@ class Runner:
 
                     train_steps += 1
 
+        wandb.finish()
         # saving final trained networks
         for agent_id in range(self.args.n_agents):
             self.list_agents[agent_id].policy.save_model(

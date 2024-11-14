@@ -1,0 +1,17 @@
+{"time":"2024-11-14T02:16:37.743769+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T02:16:37.743891+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_021637-rkx3z69i/logs/debug-core.log"}
+{"time":"2024-11-14T02:16:37.856797+02:00","level":"INFO","msg":"created new stream","id":"rkx3z69i"}
+{"time":"2024-11-14T02:16:37.856843+02:00","level":"INFO","msg":"stream: started","id":"rkx3z69i"}
+{"time":"2024-11-14T02:16:37.856861+02:00","level":"INFO","msg":"sender: started","stream_id":"rkx3z69i"}
+{"time":"2024-11-14T02:16:37.856859+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rkx3z69i"}}
+{"time":"2024-11-14T02:16:37.856893+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"rkx3z69i"}}
+{"time":"2024-11-14T02:16:38.265513+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T02:26:51.175835+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T02:26:51.176512+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T02:26:52.178827+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.367837584,"progress":"143B/143B"},{"desc":"saving job artifact","runtime_seconds":0.364954209},{"desc":"uploading config.yaml","runtime_seconds":0.038118667,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.038079292,"progress":"1.8KB/1.8KB"}],"total_operations":4}}
+{"time":"2024-11-14T02:26:53.592747+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T02:26:55.194362+02:00","level":"INFO","msg":"stream: closing","id":"rkx3z69i"}
+{"time":"2024-11-14T02:26:55.194413+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"rkx3z69i"}}
+{"time":"2024-11-14T02:26:55.194445+02:00","level":"INFO","msg":"sender: closed","stream_id":"rkx3z69i"}
+{"time":"2024-11-14T02:26:55.194435+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rkx3z69i"}}
+{"time":"2024-11-14T02:26:55.194933+02:00","level":"INFO","msg":"stream: closed","id":"rkx3z69i"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:04:25.757542+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:04:25.757616+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230425-zjiro9nf/logs/debug-core.log"}
+{"time":"2024-11-13T23:04:25.86926+02:00","level":"INFO","msg":"created new stream","id":"zjiro9nf"}
+{"time":"2024-11-13T23:04:25.869298+02:00","level":"INFO","msg":"stream: started","id":"zjiro9nf"}
+{"time":"2024-11-13T23:04:25.869354+02:00","level":"INFO","msg":"sender: started","stream_id":"zjiro9nf"}
+{"time":"2024-11-13T23:04:25.869344+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"zjiro9nf"}}
+{"time":"2024-11-13T23:04:25.869442+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"zjiro9nf"}}
+{"time":"2024-11-13T23:04:26.316904+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:04:28.787631+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:04:28.787964+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:04:29.789188+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.665392625},{"desc":"uploading config.yaml","runtime_seconds":0.336612917,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.336593458,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:04:30.159201+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:04:31.57935+02:00","level":"INFO","msg":"stream: closing","id":"zjiro9nf"}
+{"time":"2024-11-13T23:04:31.579387+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"zjiro9nf"}}
+{"time":"2024-11-13T23:04:31.579423+02:00","level":"INFO","msg":"sender: closed","stream_id":"zjiro9nf"}
+{"time":"2024-11-13T23:04:31.579416+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"zjiro9nf"}}
+{"time":"2024-11-13T23:04:31.579757+02:00","level":"INFO","msg":"stream: closed","id":"zjiro9nf"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-13T15:09:19.663274+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T15:09:19.663319+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_150919-jyutsww2/logs/debug-core.log"}
+{"time":"2024-11-13T15:09:19.77159+02:00","level":"INFO","msg":"created new stream","id":"jyutsww2"}
+{"time":"2024-11-13T15:09:19.771647+02:00","level":"INFO","msg":"stream: started","id":"jyutsww2"}
+{"time":"2024-11-13T15:09:19.77213+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"jyutsww2"}}
+{"time":"2024-11-13T15:09:19.772162+02:00","level":"INFO","msg":"sender: started","stream_id":"jyutsww2"}
+{"time":"2024-11-13T15:09:19.772233+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"jyutsww2"}}
+{"time":"2024-11-13T15:09:20.235317+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T15:09:22.000598+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T15:09:22.000941+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T15:09:23.002606+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.70794575}],"total_operations":1}}
+{"time":"2024-11-13T15:09:23.382037+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T15:09:24.775162+02:00","level":"INFO","msg":"stream: closing","id":"jyutsww2"}
+{"time":"2024-11-13T15:09:24.775179+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"jyutsww2"}}
+{"time":"2024-11-13T15:09:24.775194+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"jyutsww2"}}
+{"time":"2024-11-13T15:09:24.775198+02:00","level":"INFO","msg":"sender: closed","stream_id":"jyutsww2"}
+{"time":"2024-11-13T15:09:24.775303+02:00","level":"INFO","msg":"stream: closed","id":"jyutsww2"}

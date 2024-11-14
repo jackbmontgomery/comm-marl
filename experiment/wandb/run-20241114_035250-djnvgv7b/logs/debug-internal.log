@@ -1,0 +1,17 @@
+{"time":"2024-11-14T03:52:50.333538+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T03:52:50.333653+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_035250-djnvgv7b/logs/debug-core.log"}
+{"time":"2024-11-14T03:52:50.445712+02:00","level":"INFO","msg":"created new stream","id":"djnvgv7b"}
+{"time":"2024-11-14T03:52:50.445754+02:00","level":"INFO","msg":"stream: started","id":"djnvgv7b"}
+{"time":"2024-11-14T03:52:50.445785+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"djnvgv7b"}}
+{"time":"2024-11-14T03:52:50.445864+02:00","level":"INFO","msg":"sender: started","stream_id":"djnvgv7b"}
+{"time":"2024-11-14T03:52:50.445773+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"djnvgv7b"}}
+{"time":"2024-11-14T03:52:50.87501+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T04:08:43.352553+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T04:08:43.352919+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T04:08:44.355808+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.36475075},{"desc":"uploading wandb-summary.json","runtime_seconds":0.311425541,"progress":"143B/143B"},{"desc":"uploading config.yaml","runtime_seconds":0.038273041,"progress":"1.5KB/1.5KB"},{"desc":"uploading output.log","runtime_seconds":0.038243459,"progress":"1.8KB/1.8KB"}],"total_operations":4}}
+{"time":"2024-11-14T04:08:44.938569+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T04:08:46.314952+02:00","level":"INFO","msg":"stream: closing","id":"djnvgv7b"}
+{"time":"2024-11-14T04:08:46.314987+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"djnvgv7b"}}
+{"time":"2024-11-14T04:08:46.315018+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"djnvgv7b"}}
+{"time":"2024-11-14T04:08:46.315039+02:00","level":"INFO","msg":"sender: closed","stream_id":"djnvgv7b"}
+{"time":"2024-11-14T04:08:46.31521+02:00","level":"INFO","msg":"stream: closed","id":"djnvgv7b"}

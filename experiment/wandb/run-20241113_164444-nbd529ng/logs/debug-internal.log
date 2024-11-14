@@ -1,0 +1,17 @@
+{"time":"2024-11-13T16:44:44.660689+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T16:44:44.660725+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_164444-nbd529ng/logs/debug-core.log"}
+{"time":"2024-11-13T16:44:44.770036+02:00","level":"INFO","msg":"created new stream","id":"nbd529ng"}
+{"time":"2024-11-13T16:44:44.770075+02:00","level":"INFO","msg":"stream: started","id":"nbd529ng"}
+{"time":"2024-11-13T16:44:44.7701+02:00","level":"INFO","msg":"sender: started","stream_id":"nbd529ng"}
+{"time":"2024-11-13T16:44:44.770083+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"nbd529ng"}}
+{"time":"2024-11-13T16:44:44.770158+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"nbd529ng"}}
+{"time":"2024-11-13T16:44:45.620077+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T17:09:10.602142+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T17:09:10.603184+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T17:09:11.604012+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.284052292,"progress":"145B/145B"},{"desc":"saving job artifact","runtime_seconds":0.282383916}],"total_operations":2}}
+{"time":"2024-11-13T17:09:13.063803+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T17:09:14.46492+02:00","level":"INFO","msg":"stream: closing","id":"nbd529ng"}
+{"time":"2024-11-13T17:09:14.464968+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"nbd529ng"}}
+{"time":"2024-11-13T17:09:14.465008+02:00","level":"INFO","msg":"sender: closed","stream_id":"nbd529ng"}
+{"time":"2024-11-13T17:09:14.465002+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"nbd529ng"}}
+{"time":"2024-11-13T17:09:14.465323+02:00","level":"INFO","msg":"stream: closed","id":"nbd529ng"}

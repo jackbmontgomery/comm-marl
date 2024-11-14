@@ -1,0 +1,16 @@
+{"time":"2024-11-13T14:47:53.964093+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T14:47:53.964191+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_144753-gzr2hefr/logs/debug-core.log"}
+{"time":"2024-11-13T14:47:54.080164+02:00","level":"INFO","msg":"created new stream","id":"gzr2hefr"}
+{"time":"2024-11-13T14:47:54.080234+02:00","level":"INFO","msg":"stream: started","id":"gzr2hefr"}
+{"time":"2024-11-13T14:47:54.080262+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"gzr2hefr"}}
+{"time":"2024-11-13T14:47:54.080363+02:00","level":"INFO","msg":"sender: started","stream_id":"gzr2hefr"}
+{"time":"2024-11-13T14:47:54.080361+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"gzr2hefr"}}
+{"time":"2024-11-13T14:47:54.553694+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T14:54:34.257482+02:00","level":"INFO","msg":"stream: closing","id":"gzr2hefr"}
+{"time":"2024-11-13T14:54:34.257749+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T14:54:34.258764+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T14:54:38.289348+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T14:54:38.671142+02:00","level":"INFO","msg":"sender: closed","stream_id":"gzr2hefr"}
+{"time":"2024-11-13T14:54:38.671105+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"gzr2hefr"}}
+{"time":"2024-11-13T14:54:38.671129+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"gzr2hefr"}}
+{"time":"2024-11-13T14:54:38.671831+02:00","level":"INFO","msg":"stream: closed","id":"gzr2hefr"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-13T17:42:33.729968+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T17:42:33.730079+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_174233-2pdaf3kg/logs/debug-core.log"}
+{"time":"2024-11-13T17:42:33.844689+02:00","level":"INFO","msg":"created new stream","id":"2pdaf3kg"}
+{"time":"2024-11-13T17:42:33.844729+02:00","level":"INFO","msg":"stream: started","id":"2pdaf3kg"}
+{"time":"2024-11-13T17:42:33.844741+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2pdaf3kg"}}
+{"time":"2024-11-13T17:42:33.844761+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"2pdaf3kg"}}
+{"time":"2024-11-13T17:42:33.844845+02:00","level":"INFO","msg":"sender: started","stream_id":"2pdaf3kg"}
+{"time":"2024-11-13T17:42:34.285226+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T17:54:12.4688+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T17:54:12.46969+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T17:54:13.470615+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.077099083},{"desc":"saving job artifact","runtime_seconds":0.075480834}],"total_operations":2}}
+{"time":"2024-11-13T17:54:14.334441+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T17:54:15.748128+02:00","level":"INFO","msg":"stream: closing","id":"2pdaf3kg"}
+{"time":"2024-11-13T17:54:15.748212+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"2pdaf3kg"}}
+{"time":"2024-11-13T17:54:15.74825+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2pdaf3kg"}}
+{"time":"2024-11-13T17:54:15.748273+02:00","level":"INFO","msg":"sender: closed","stream_id":"2pdaf3kg"}
+{"time":"2024-11-13T17:54:15.748427+02:00","level":"INFO","msg":"stream: closed","id":"2pdaf3kg"}

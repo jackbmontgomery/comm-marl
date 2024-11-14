@@ -6,6 +6,18 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 
+\usepackage{pgfpages}
+
+\setbeameroption{show notes on second screen=right} % Both
+
+\usepackage{pdfpages}
+
+\usepackage[sort&compress]{natbib}
+\bibliographystyle{apalike}
+
+\newcommand{\slidenote}[1]{\note[item]{#1}}
+
+
 \title{Communication in Multi-agent Reinforcement Learning}
 \date{\today}
 \author{Jack Montgomery}
@@ -21,6 +33,9 @@
 	\centering
 	\includegraphics[scale=0.4]{images/agent_environment.png}
 \end{figure}
+\slidenote{joke: spend a lot of time here}
+\slidenote{Neuroscience: human brain is believed to be devoted to the dopamine system reflects the reinforcement learning loop}
+\slidenote{Phycology: Classical conditioning: how and why animals behaviour happens when you give them a treat}
 \end{frame}
 
 \begin{frame}{Motivation}
@@ -28,6 +43,8 @@
 	\centering
 	\includegraphics[scale=0.4]{images/neural_networks.png}
 \end{figure}
+\slidenote{Neural networks structured on how our brain performs computations with neurons}
+\slidenote{Varying degrees of biological plausibility, but the point is that it was motivated by the human experience}
 \end{frame}
 
 \begin{frame}{Motivation}
@@ -36,15 +53,19 @@
 	\item Credit Assignment
 	\item Scaling
 \end{itemize}
+\slidenote{It is reasonable to then approach problems we see in multi-agent reinforcement learning too with the tools from human coordination/competition - communication}
 \end{frame}
 
 
 \section{Comm-MARL}
 \begin{frame}{How do we communicate?}
-	\begin{figure}
-		\centering
-		\includegraphics[scale=0.3]{images/communicate.jpg}
-	\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.3]{images/communicate.jpg}
+\end{figure}
+\slidenote{Sign language, inflection}
+\slidenote{finite lexicon with infinite utterances}	
+\slidenote{Norm Chomsky}
 \end{frame}
 
 \begin{frame}{Dimensions of Comm-MARL}
@@ -98,14 +119,14 @@
             \cline{2-4}
             & 5 & How to combine received messages? & Message combination \\
             \cline{2-4}
-            & 6 & Which piece of information to share? & \textcolor{red}{Communicated messages} \\
+            & 6 & Which piece of information to share? & Communicated messages \\
             \cline{2-4}
             & 7 & How to integrate combined messages into learning models? & Inner integration \\
             \hline
             Training Processes 
             & 8 & How to train and improve communication? & \textcolor{red}{Learning methods} \\
             \cline{2-4}
-            & 9 & How to utilise collected experience from agents? & Training schemes \\
+            & 9 & How to utilise collected experience from agents? & \textcolor{red}{Training schemes} \\
             \hline
         \end{tabular}
     }
@@ -113,48 +134,80 @@
 
 \begin{frame}{Method}
 	\begin{enumerate}
-		\item RIAL and DIAL
-		\item CommNet
-		\item IC3Net
-		\item BiCNet
-		\item NeurComm
-		\item HAMMER
+		\item RIAL and DIAL \citep{foerster2016learning}
+		\item CommNet \citep{sukhbaatar2016commnet}
+		\item BiCNet \citep{peng2017bicnet}
+		\item IC3Net \citep{singh2018ic3net}
+		\item NeurComm \citep{chu2020NeurComm}
+		\item HAMMER \citep{gupta2022HAMMER}
 	\end{enumerate}
+\slidenote{Differentiable and Reinforced Inter Agent Learning: Messages are output as part of a neural network}
+\slidenote{Communication Network: Messages are not explicitly output but rather average of the states of the neural network}
+\slidenote{Bidirectionally-Coordinated Networks: Bidirectional RNN hidden states passes forward then backward}
+\slidenote{Individualized Controlled Continuous Communication Network: CommNet with a gating mechanism}
+\slidenote{Neural communication protocol: Networked model where messages are the unions of observations, policy fingerprint, hidden state}
+\slidenote{Heterogeneous Agents Mastering Messaging to Enhance Reinforcement learning: PPO with a central communicator called a proxy}
 \end{frame}
 
 \begin{frame}{Commuicateee Types}
-\begin{itemize}
-	\item Nearby Agents
-	\item Other Learning Agents
-	\item Proxy
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Communicated messages}
-\begin{itemize}
-	\item Existing knowledge
-	\item Imagined future knowledge
-\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{images/communicatee.png}
+\end{figure}
+\slidenote{Nearby: Neurcomm create a network of agents connected}
+\slidenote{IC3Net: Gating mechanism to communicate or not with other agents - competitive and mixed scenarios}
+\slidenote{Proxy: Hammer - differentiable and reinforced}
 \end{frame}
 
 \begin{frame}{Learning Methods}
-\begin{itemize}
-	\item Reinforced
-	\item Differentiable
-\end{itemize}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.35]{images/rial_dial}
+	\caption{\textbf{Left}: RIAL - \textbf{Right:} DIAL }
+\end{figure}
+\slidenote{RIAL and HAMMERv1: Reinforced}
+\slidenote{FIAL and HAMMERv2,3: Differentiable}
 \end{frame}
 
-\section{Parameter Sharing}
+\begin{frame}{Training Schemes}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.4]{images/training_schemes.png}
+\end{figure}
+\slidenote{Fully Centralised Learning: None}
+\slidenote{Fully Decentralised Learning: NeurComm}
+\end{frame}
+
+\begin{frame}{Training Schemes}
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{images/parameter_sharing.png}
+\end{figure}	
+\slidenote{Everything: DIAL and RIAL, CommNet, IC3Net}
+\end{frame}
+
+
+
+\section{Investigation of Parameter Sharing}
 
 \begin{frame}{NPS vs PS Model}
 	\begin{figure}
 		\centering
 		\includegraphics[scale=0.25]{images/nps_comm.png}
 	\end{figure}
+\slidenote{Detachment of the computational graph when not using parameter sharing - so they require their own message as input to keep the computational graph connected}
+\slidenote{Formally show how the gradients will be calculated in this independent scheme}
 \end{frame}
 
 \begin{frame}{Results}
-	
+\end{frame}
+
+
+\begin{frame}{References}
+\tiny
+\nocite{zhu2024survey}
+\nocite{pina2024fully}
+\bibliography{references}
 \end{frame}
 
 \end{document}

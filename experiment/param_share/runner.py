@@ -127,6 +127,7 @@ class Runner:
                     self.agents.train(mini_batch, train_steps)
                     train_steps += 1
 
+        wandb.finish()
         self.agents.policy.save_model(train_step)
 
         plt.cla()

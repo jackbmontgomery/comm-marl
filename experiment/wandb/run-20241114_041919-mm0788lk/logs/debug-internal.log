@@ -1,0 +1,17 @@
+{"time":"2024-11-14T04:19:19.948274+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T04:19:19.948392+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_041919-mm0788lk/logs/debug-core.log"}
+{"time":"2024-11-14T04:19:20.060763+02:00","level":"INFO","msg":"created new stream","id":"mm0788lk"}
+{"time":"2024-11-14T04:19:20.060805+02:00","level":"INFO","msg":"stream: started","id":"mm0788lk"}
+{"time":"2024-11-14T04:19:20.060867+02:00","level":"INFO","msg":"sender: started","stream_id":"mm0788lk"}
+{"time":"2024-11-14T04:19:20.060813+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"mm0788lk"}}
+{"time":"2024-11-14T04:19:20.060905+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"mm0788lk"}}
+{"time":"2024-11-14T04:19:20.460682+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T04:26:22.05903+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T04:26:22.060076+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T04:26:23.062022+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":1.003519792}],"total_operations":1}}
+{"time":"2024-11-14T04:26:26.91699+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T04:26:28.613054+02:00","level":"INFO","msg":"stream: closing","id":"mm0788lk"}
+{"time":"2024-11-14T04:26:28.613094+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"mm0788lk"}}
+{"time":"2024-11-14T04:26:28.61311+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"mm0788lk"}}
+{"time":"2024-11-14T04:26:28.613128+02:00","level":"INFO","msg":"sender: closed","stream_id":"mm0788lk"}
+{"time":"2024-11-14T04:26:28.613326+02:00","level":"INFO","msg":"stream: closed","id":"mm0788lk"}

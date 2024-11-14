@@ -1,0 +1,17 @@
+{"time":"2024-11-14T06:02:40.529795+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T06:02:40.529839+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_060240-1ca1rblr/logs/debug-core.log"}
+{"time":"2024-11-14T06:02:40.638994+02:00","level":"INFO","msg":"created new stream","id":"1ca1rblr"}
+{"time":"2024-11-14T06:02:40.639033+02:00","level":"INFO","msg":"stream: started","id":"1ca1rblr"}
+{"time":"2024-11-14T06:02:40.639046+02:00","level":"INFO","msg":"sender: started","stream_id":"1ca1rblr"}
+{"time":"2024-11-14T06:02:40.639042+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"1ca1rblr"}}
+{"time":"2024-11-14T06:02:40.639067+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"1ca1rblr"}}
+{"time":"2024-11-14T06:02:41.131955+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T06:15:26.433146+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T06:15:26.434186+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T06:15:27.435646+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.220589625},{"desc":"saving job artifact","runtime_seconds":0.219468416}],"total_operations":2}}
+{"time":"2024-11-14T06:15:28.147241+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T06:15:29.526884+02:00","level":"INFO","msg":"stream: closing","id":"1ca1rblr"}
+{"time":"2024-11-14T06:15:29.52691+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"1ca1rblr"}}
+{"time":"2024-11-14T06:15:29.526931+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"1ca1rblr"}}
+{"time":"2024-11-14T06:15:29.526951+02:00","level":"INFO","msg":"sender: closed","stream_id":"1ca1rblr"}
+{"time":"2024-11-14T06:15:29.527083+02:00","level":"INFO","msg":"stream: closed","id":"1ca1rblr"}

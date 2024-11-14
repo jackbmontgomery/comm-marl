@@ -1,0 +1,45 @@
+Run 1, train step 0/2500000, elapsed time: 0.00 seconds
+Run 1, train step 10025/2500000, elapsed time: 56.17 seconds
+Run 1, train step 20081/2500000, elapsed time: 113.36 seconds
+Run 1, train step 30016/2500000, elapsed time: 168.72 seconds
+Run 1, train step 40040/2500000, elapsed time: 223.45 seconds
+Run 1, train step 50040/2500000, elapsed time: 277.97 seconds
+Run 1, train step 60040/2500000, elapsed time: 332.43 seconds
+Run 1, train step 70040/2500000, elapsed time: 386.90 seconds
+Run 1, train step 80040/2500000, elapsed time: 441.41 seconds
+Run 1, train step 90040/2500000, elapsed time: 496.49 seconds
+Run 1, train step 100040/2500000, elapsed time: 551.22 seconds
+Run 1, train step 110040/2500000, elapsed time: 605.99 seconds
+Run 1, train step 120040/2500000, elapsed time: 660.86 seconds
+Run 1, train step 130040/2500000, elapsed time: 715.71 seconds
+Run 1, train step 140040/2500000, elapsed time: 770.52 seconds
+Run 1, train step 150040/2500000, elapsed time: 825.41 seconds
+Run 1, train step 160040/2500000, elapsed time: 880.02 seconds
+Run 1, train step 170040/2500000, elapsed time: 934.86 seconds
+Run 1, train step 180040/2500000, elapsed time: 989.87 seconds
+Run 1, train step 190040/2500000, elapsed time: 1044.74 seconds
+Run 1, train step 200040/2500000, elapsed time: 1099.86 seconds
+Run 1, train step 210040/2500000, elapsed time: 1155.03 seconds
+Run 1, train step 220040/2500000, elapsed time: 1210.33 seconds
+Run 1, train step 230040/2500000, elapsed time: 1265.47 seconds
+Run 1, train step 240040/2500000, elapsed time: 1320.74 seconds
+Run 1, train step 250040/2500000, elapsed time: 1376.04 seconds
+Run 1, train step 260040/2500000, elapsed time: 1431.25 seconds
+Run 1, train step 270040/2500000, elapsed time: 1486.46 seconds
+Run 1, train step 280040/2500000, elapsed time: 1541.80 seconds
+Run 1, train step 290040/2500000, elapsed time: 1597.03 seconds
+Run 1, train step 300040/2500000, elapsed time: 1652.30 seconds
+Run 1, train step 310040/2500000, elapsed time: 1707.63 seconds
+Run 1, train step 320040/2500000, elapsed time: 2695.25 seconds
+Run 1, train step 330040/2500000, elapsed time: 3162.97 seconds
+Run 1, train step 340040/2500000, elapsed time: 3218.79 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/main.py", line 65, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/runner.py", line 119, in run
+    self.list_agents[agent_id].train(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/agent/agent.py", line 122, in train
+    max_episode_len = self._get_max_episode_len(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/no_param_share/agent/agent.py", line 92, in _get_max_episode_len
+    if terminated[episode_idx, transition_idx, 0] == 1:
+KeyboardInterrupt

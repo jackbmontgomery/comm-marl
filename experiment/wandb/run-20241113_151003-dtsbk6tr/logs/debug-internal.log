@@ -1,0 +1,17 @@
+{"time":"2024-11-13T15:10:03.585233+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T15:10:03.585264+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_151003-dtsbk6tr/logs/debug-core.log"}
+{"time":"2024-11-13T15:10:03.694401+02:00","level":"INFO","msg":"created new stream","id":"dtsbk6tr"}
+{"time":"2024-11-13T15:10:03.694443+02:00","level":"INFO","msg":"stream: started","id":"dtsbk6tr"}
+{"time":"2024-11-13T15:10:03.694454+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dtsbk6tr"}}
+{"time":"2024-11-13T15:10:03.694488+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"dtsbk6tr"}}
+{"time":"2024-11-13T15:10:03.694613+02:00","level":"INFO","msg":"sender: started","stream_id":"dtsbk6tr"}
+{"time":"2024-11-13T15:10:04.321809+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T15:10:05.256564+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T15:10:05.256882+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T15:10:06.257857+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-metadata.json","runtime_seconds":0.742418209,"progress":"1.1KB/1.1KB"},{"desc":"saving job artifact","runtime_seconds":0.713925291},{"desc":"uploading wandb-summary.json","runtime_seconds":0.665139917,"progress":"124B/124B"},{"desc":"uploading config.yaml","runtime_seconds":0.371410083,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.37138225,"progress":"52B/52B"}],"total_operations":5}}
+{"time":"2024-11-13T15:10:06.730763+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T15:10:08.129357+02:00","level":"INFO","msg":"stream: closing","id":"dtsbk6tr"}
+{"time":"2024-11-13T15:10:08.129396+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"dtsbk6tr"}}
+{"time":"2024-11-13T15:10:08.129434+02:00","level":"INFO","msg":"sender: closed","stream_id":"dtsbk6tr"}
+{"time":"2024-11-13T15:10:08.129421+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dtsbk6tr"}}
+{"time":"2024-11-13T15:10:08.129662+02:00","level":"INFO","msg":"stream: closed","id":"dtsbk6tr"}

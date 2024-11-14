@@ -71,35 +71,32 @@
 
 \section{Introduction}
 
-Many real world problems can be modelled as multi-agent systems, these include autonomous-driving \citep{shavlev2016safe}, sensor networks \citep{vinyals2014sensor} and robotics \citep{kober2013reinforcement}. With the number of systems that are able to be modelled in this way only increasing in an age of ubiquitous computing power and the use of artificial intelligence agents. This begs the questions of how can a collective of autonomous agents, each capable of making its own decision, interact in this shared environment in order to achieve the goal of the system. These agents may be homogenous with shared goals, as in the case of a fleet of robots,  where each agent only benefits if the collective benefits, or different, heterogeneous agents who benefit from the other agent's failing a task. If agents do not have an understanding of the dynamics of the environment, or how rewards will be generated from the environment, can they use the experience of historical interactions to then learn these features and maximise rewards they receive. This type of behaviour is very difficult to achieve with other agents' actions also effecting the environment causing non-stationarity in the environmental dynamics, and making it more difficult for an agent to understanding what exactly caused the reward they are observing, which is the problem of credit assignment. Solving these problems and achieving these intelligent muti-agent systems is the vision of multi-agent reinforcement learning (MARL). \citep{albrecht2024marl}
+Many real world problems can be modelled as multi-agent systems, these include autonomous-driving \citep{shavlev2016safe}, sensor networks \citep{vinyals2014sensor} and robotics \citep{kober2013reinforcement}. The number of systems that can be modelled in this way is only increasing in an age of ubiquitous computing power and the use of artificial intelligence agents. This begs the question of how can a collective of autonomous agents, each capable of making its own decision, interact in this shared environment in order to achieve the goal of the environment. These agents may be homogenous with shared goals, as in the case of a fleet of robots, where each agent only benefits if the collective benefits, or different, heterogeneous agents who benefit from the other agent's failing a task. If agents do not have an understanding of the dynamics of the environment, or how rewards will be generated from the environment, can they use the experience of historical interactions to then learn these features and maximise the rewards they receive. This type of behaviour is very difficult to achieve with other agents' taking actions that too effecting the environment causing non-stationarity in the dynamics, and making it more difficult for an agent to understanding what exactly caused the reward they are observing, which is the problem of credit assignment. Solving these problems and achieving these intelligent multi-agent systems is the vision of multi-agent reinforcement learning (MARL). \citep{albrecht2024marl}
 
 \
 
-MARL is an extension of single-agent reinforcement learning (RL) \citep{sutton2018reinforcement} meaning that the MARL aims to use the framework's for modelling environments, as well as the techniques for learning agents from RL and adjust them to better suit a situation with multiple agents. RL has laid the foundation for artificial agent's learning from experience in an environment, with no (or very little) prior information about the environment. Many core ideas in reinforcement learning are inspired by phenomena in animal learning, psychology and neuroscience. \citep{subramanian2020psychological} What's more, modern approaches in RL use so called `deep' methods \citep{wang2024deep} in which neural networks are used in as function approximators for various components of a reinforcement learning model. With neural networks too being inspired from the manner in which we understand our brain to be performing computations. The human experience has been fundamental to the development of these algorithms and solution techniques, it is therefore reasonable to consider how human's solve problems with many people as motivation for the approach to take in multi-agent reinforcement learning. A fundamental mechanism for coordinating the behaviours of multiple agents, broadening their views of the environment, and to support their collaborations is communication. \citep{zhu2024survey}
+MARL is an extension of single-agent reinforcement learning (RL) \citep{sutton2018reinforcement} meaning that the MARL aims to use the framework's for modelling environments, as well as the techniques for learning from RL and adjust them to better suit a situation with multiple agents. RL has laid the foundation for artificial agent's learning from experience in an environment, with no (or very little) prior information about the dynamics or reward structure. Many core ideas in reinforcement learning are inspired by phenomena in animal learning, psychology and neuroscience. \citep{subramanian2020psychological} What's more, modern approaches in RL use so called `deep' methods \citep{wang2024deep} in which neural networks are used in as function approximators for various components of a reinforcement learning model. With neural networks too being inspired from the manner in which we understand our brain to be performing computations. The human experience has been fundamental to the development of these algorithms and solution techniques, it is therefore reasonable to consider how human's solve problems with many people as motivation for the approach to take in MARL. A fundamental mechanism for coordinating the behaviours of multiple agents, broadening their views of the environment, and to support their collaborations is \textbf{communication}. \citep{zhu2024survey}
 
 \
 
-Investigating how this communication can be realised within MARL is done in the subfield of multi-agent reinforcement learning with communication (Comm-MARL). Within Comm-MARL, we consider the structure of the communicative messages that are sent by agents, who the agent's are able to communicate with, how agent's learn to communicate, what kind of communication is encouraged by the environment etc.. Comm-MARL again builds on techniques from MARL with the additional of this dimension of communication and messages again needing to be incorporated into the frameworks and models. The goal of this report is to provide a thorough overview of the techniques of Comm-MARL, as well as investigate some of the common assumptions taken in Comm-MARL models. We aim to achieve this by placing reinforcement-learning building blocks on top of one another to ultimately land at the structure of Comm-MARL.
+Investigating how this communication can be realised within MARL is done in the subfield of multi-agent reinforcement learning with communication (Comm-MARL). Within Comm-MARL, we consider the structure of the communicative messages that are sent by agents, who the agent's are able to communicate with, how agent's learn to communicate, what kind of communication is encouraged by the environment etc.. Comm-MARL again builds on techniques from MARL with the addition of this dimension of communication and messages again needing to be incorporated into the frameworks and models. The goal of this report is to provide a thorough overview of the techniques of Comm-MARL, as well as investigate some of the common assumptions taken in Comm-MARL models. We aim to achieve this by placing reinforcement-learning building blocks on top of one another to ultimately land at the structure of Comm-MARL.
 
 \
 
-We will start this investigation with the foundations of RL in Section \ref{sec:rl}. We discuss the fundamental structural assumption of a system that can be solved using RL - the distinction of an environment and an agent. This structure then gives rise to the agent-environment loop for which agent learning algorithms aim to exploit in order to learn to solve the problem of the environment.  This distinction requires us to define two different sets of tools - frameworks for understanding the environment and models for solving the problem in the environment. The framework we will be considering for the environment in this report are Markov decision processes (MDP). These environment carry an assumption of the dynamics of the changing states of the environment that is used in the models we will discuss for these environments. That being said, we will then move on to discuss the two types of models we will be considering - value-based and policy based. We will then aim to build some intuition about these model categories by way of an example in a simple grid-world environment from OpenAI \textit{Gymnasium} \citep{kwiatkowski2024gymnasium} package. Finally, we will introduce the deep methods from RL that will then build the foundation for the multi-agent algorithms that are discussed later in the report.
+We will start this investigation with the foundations of RL in Section \ref{sec:rl}. We discuss the fundamental structural assumption of a system that can be solved using RL - the distinction of an environment and an agent. This structure then gives rise to the agent-environment loop for which learning algorithms aim to exploit in order to learn to solve the problem of the environment.  This distinction requires us to define two different sets of tools - frameworks for understanding the environment and models for maximising rewards. The framework for sequential decision problems we will be considering in this report are Markov decision processes (MDP). These sequential decisions processes carry an assumption of the dynamics of the states over time - that the chain of states of the environment has the \textbf{Markov property}. This assumption is used to construct algorithms to solve these decision problems. We will then move on to discuss the two types of models we will be considering - value-based and policy based. We will then build some intuition about these model categories by way of an example in a simple grid-world environment from OpenAI \textit{Gymnasium} \citep{kwiatkowski2024gymnasium} package. Finally, we will introduce the deep methods from RL that will then build the foundation for the multi-agent algorithms that are discussed later in the report.
 
-\
-
-%TODO: Need to add to this if we add to the MARL section.
-
-We can then place the MARL building block with this intuition and understanding of RL; its environmental frameworks and models. The agent-environment loop nows becomes the agent\textbf{s}-environment loops in MARL. This requires a different set of environment frameworks to understand this environment. These tools build on MDPs which include the multiple agent's, each of their local observations and the their reward structure. This is usually formalised as a partially observable stochastic game (POSG). Translating RL techniques fall on a spectrum between modelling the environment and multiple agents as a single agent where one can simply use the enlarged state and action space as the input and output to this global agent and assuming that agent's are independent actors and not considering the effect that other agent's have on the environment. These techniques, as well as other fundamental characteristics of multi-agent systems give rise to core problems of MARL which we will discuss.
+\ 
+ 
+We can then place the MARL building block with this intuition and understanding of RL; its environmental frameworks and models. The agent-environment loop nows becomes the agent\textbf{s}-environment loops in MARL. This requires a different set of environment frameworks to understand this problem. These tools build on MDPs and include multiple agent's, each of their local observations and the their reward structure. This is usually formalised as a partially observable stochastic game (POSG). Translating RL techniques fall on a spectrum between modelling all agents as a single agent with the joint observation and action space and assuming that agent's are independent actors and not considering the effect that other agent's have on the environment. These techniques, as well as other fundamental characteristics of multi-agent systems give rise to core problems of MARL which is discussed.
 
 
 \
 
-%TODO: Add the distinction between the language subfield
-The final block we will place is communication on this knowledge we have of MARL. To overview this subfield we use the nine dimensions of Comm-MARL models identified in \citet{zhu2024survey} to compare and disambiguate size key, representative Comm-MARL algorithms: DIAL and RIAL \citep{foerster2016learning}, CommNet \citep{sukhbaatar2016commnet}, IC3Net \citep{singh2018ic3net}, BiCNet \citep{peng2017bicnet} and NeurComm \citep{chu2020NeurComm} and HAMMER \citep{gupta2022HAMMER}. The usage of these models is to give concrete examples of the different approaches that have been taken to communication. While the neural network and training schemes are not introduced for each model in this report, we have included these details in Appendix \ref{sec:models}. That being said, reading through each dimension of Comm-MARL the reader will obtain a good understanding of these models.
+The final block we will place is communication on this MARL foundation. To overview this subfield we use the nine dimensions of Comm-MARL models identified in \citet{zhu2024survey} to compare and disambiguate five representative Comm-MARL algorithms: DIAL and RIAL \citep{foerster2016learning}, CommNet \citep{sukhbaatar2016commnet}, IC3Net \citep{singh2018ic3net}, BiCNet \citep{peng2017bicnet}, NeurComm \citep{chu2020NeurComm} and HAMMER \citep{gupta2022HAMMER}. The use of these models is to give concrete examples of the different approaches that have been taken to communication. While the neural network and training schemes are not introduced for each model in this report explicitly, we have included these details in Appendix \ref{sec:models}. That being said, reading through each dimension of Comm-MARL one will obtain a good overall understanding of these models. A point to note is that there is a particular approach to Comm-MARL that is called \textit{emergent language}. Although one can argue algorithms do not learn a language as humans know, this approach usually entails agents selecting a specific number of `words' from a predefined lexicon. The goal of the combination of these words is to resemble the descriptive and hierarchical nature of human language. This will not be addressed in this report, and we refer the reader to \citet{boldt2024review} for details of models and application of emergent language in machine learning.
 
 \
 
-The final section of this report will be a practical implementation of Comm-MARL. As we will see, parameter sharing is used extensively in Comm-MARL as it is a fundamental assumption for a fully differentiable communication learning as well as allowing these models to scale to more agents. However, the practical implementation of parameter sharing is not feasible, therefore in this final section we will compare a simple MARL learning algorithm with the presence and absence of communication and parameter sharing.
+The final section of this report will be a practical implementation of Comm-MARL. As we will see, parameter sharing is used extensively in Comm-MARL as it is a fundamental assumption for fully differentiable communication learning as well as allowing these algorithms to scale with the number of agents present. However, the practical implementation of parameter sharing is not feasible. \citep{terry2023revisiting} Since these methods do not allow for heterogeneous action or observations dimensions. Therefore in this final section we will compare a simple MARL learning algorithm with the presence and absence of communication and parameter sharing and discuss the implications thereof.
 
 \
 
@@ -109,7 +106,7 @@ This report makes no attempt to present novel findings, but rather translate, co
 
 \section{Reinforcement Learning (RL)} \label{sec:rl}
 
-Reinforcement learning, much like machine learning, refers to both a problem as well as a class of solutions \citep{sutton2018reinforcement}. Reinforcement learning problems involve learning what to do - how to map situations to actions - so as to maximise a numerical reward signal. In an essential way they are closed-loop problems because the learning system’s actions influence its later inputs. Moreover, the learner is not told which actions to take, as in many forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These three characteristics - being closed - loop in an essential way, not having direct instructions as to what actions to take, and where the consequences of actions, including reward signals, play out over extended time periods - are the three most important distinguishing features of reinforcement learning problems.
+Reinforcement learning, much like machine learning, refers to both a problem as well as a class of solutions \citep{sutton2018reinforcement}. Reinforcement learning problems involve learning what to do - how to map situations to actions - so as to maximise a numerical reward signal. In an essential way they are closed-loop problems because the learning system’s actions influence its later inputs. Moreover, the learner is not told which actions to take, as in many forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These three characteristics - being a closed loop, not having direct instructions as to what actions to take, and where the consequences of actions, including reward signals, play out over extended time periods - are the three most important distinguishing features of reinforcement learning problems.
 
 
 \subsection{Agent - Environment Loop}
@@ -118,7 +115,7 @@ Reinforcement learning is a framing of the problem of learning from interactions
 
 \
 
-Specifically, the agent and the environment interact over a sequence of discrete time-steps $(t = 1, 2, 3, \hdots)$ At each time-step the agent receives some representation of the environment's state, $S_t \in \mathcal{S}$ where $\mathcal{S}$ is the set of all possible states of the environment, based on that the agent selects an action, $A_t \in \mathcal{A}(S_t)$, where $\mathcal{A}(S_t)$ is the set of all possible actions the agent can take in state $s_t$. In the next time-step, the agent receives a numerical reward $R_{t+1} \in \mathcal{R} \subset \mathbb{R}$, and observes a new state representation $S_{t+1}$. This agent-environment loop is depicted in Figure \ref{fig:agent_environment}. 
+Specifically, the agent and the environment interact over a sequence of discrete time-steps $(t = 1, 2, 3, \hdots)$ At each time-step the agent receives some representation of the environment's state, $S_t \in \mathcal{S}$ where $\mathcal{S}$ is the set of all possible states of the environment, based on that the agent selects an action, $A_t \in \mathcal{A}(S_t)$, where $\mathcal{A}(S_t)$ is the set of all possible actions the agent can take in state $s_t$. In the next time-step, the agent receives a numerical reward $R_{t+1} \in \mathcal{R} \subset \mathbb{R}$, and observes a new state representation $S_{t+1}$. This agent-environment loop is depicted in Figure \ref{fig:agent_environment}.
 
 \
 
@@ -133,23 +130,21 @@ At each time-step the agent implements a mapping from states to a probability di
 
 \subsection{Returns}
 
-%TODO: Need to define an episode
-
 So far we have discussed the learning objective of reinforcement learning informally with the notion that the agent seeks to maximises the rewards it receives over time. Let us denote the sequence of rewards received after time $t$ as $R_{t+1}, R_{t+2}, R_{t+1} \hdots$, we cannot directly effect the reward signal after time $t+1$ from an action at time $t$. Therefore, we seek to maximise the \textit{expected return}, where the return $G_t$ is defined as some function of the rewards sequence. We make the assumption of discounting future rewards - meaning the agent has some bias towards rewards received sooner in the sequence. In particular, it chooses $A_t$ to maximise the \textit{expected discounted return}:
 
 \begin{equation}\label{eq:returns}
-	G_t = R_{t+1} + \gamma R_{t+2}+ \gamma^2 R_{t+3} + \hdots = \sum_{k=0}^\infty \gamma^k R_{t + k + 1}
+	G_t = R_{t+1} + \gamma R_{t+2}+ \gamma^2 R_{t+3} + \hdots + \gamma^{T} R_{t+T+1} = \sum_{k=0}^T \gamma^k R_{t + k + 1}
 \end{equation}
 
-where $0 \leq \gamma \leq 1$ is called the \textit{discount factor}.
+where $0 \leq \gamma \leq 1$ is called the \textit{discount factor}, and $T$ is the final time step.
 
 \
 
-Intuitively, a smaller value of $\gamma$ means the agent is more myopic. While a larger value means the agent will be more long-sighted in its selection of actions.
+Intuitively, a smaller value of $\gamma$ means the agent is more myopic. While a larger value means the agent will be more long-sighted in its selection of actions. This approach makes sense in applications in which there is a natural notion of final time step, that is, when the agent-environment interaction breaks naturally into subsequences, which we call \textit{episodes}.
 
 \subsection{Markov Property}
 
- The state representation that the agent observers, $S_t$, form a chain where $S_{t-1}$ is ``linked'' to $S_t$ through the action taken at time $t - 1$ ($A_{t-1}$). If this chain satisfies the \textit{Markov property} then the reinforcement learning task can be described as a \textit{Markov decision process} (MDP). The \textit{Markov property} means that all information that is needed by the agent can be found in its current state signal. The state signal should include immediate sensations such as sensory measurements, but it can contain much more than that. State representations can be highly processed versions of original sensations, or they can be complex structures built up over time from the sequence of sensations. For example, we can move our eyes over a scene, with only a tiny spot corresponding to the fovea visible in detail at any one time, yet build up a rich and detailed representation of a scene. \citep{sutton2018reinforcement}
+ The state representation that the agent observes, $S_t$, forms a chain where $S_{t-1}$ is ``linked'' to $S_t$ through the action taken at time $t - 1$ ($A_{t-1}$). If this chain satisfies the \textit{Markov property} then the reinforcement learning task can be described as a \textit{Markov decision process} (MDP). The \textit{Markov property} means that all information that is needed by the agent can be found in its current state signal. The state signal should include immediate sensations such as sensory measurements, but it can contain much more than that. State representations can be highly processed versions of original sensations, or they can be complex structures built up over time from the sequence of sensations. For example, we can move our eyes over a scene, with only a tiny spot corresponding to the fovea visible in detail at any one time, yet build up a rich and detailed representation of a scene. \citep{sutton2018reinforcement}
  
  \
  
@@ -173,7 +168,7 @@ If the set of states and the set of actions are finite then the MDP is called a 
 
 \
 
-A finite MDP is defined by its set if states $\mathcal{S}$, and the set of actions, $\mathcal{A}$. As well as by the one step dynamics of the environment. Given any state ($s \in \mathcal{S}$) and action ($a \in \mathcal{A}$) the probability of each possible pair of next states ($s' \in \mathcal{S}$) and reward ($r \in \mathcal{R}$) is denoted:
+A finite MDP is defined by its set of states $\mathcal{S}$, and the set of actions, $\mathcal{A}$. As well as by the one step dynamics of the environment. Given any state ($s \in \mathcal{S}$) and action ($a \in \mathcal{A}$) the probability of each possible pair of next states ($s' \in \mathcal{S}$) and reward ($r \in \mathcal{R}$) is denoted:
 
 \begin{equation}
 	p(s', r | s, a) = \mathbb{P}[ R_{t+1} = r, \ S_{t+1} = s' | S_t, A_t]
@@ -183,27 +178,27 @@ These quantities fully define a finite MDP.
 
 \subsection{Value Functions}
 
-Almost all solution to reinforcement learning problems involve some estimation of the ``goodness'' of states. Intuitively this makes sense as we need some understanding of the reward dynamics of the environment before we could hope we find a policy that maximises these rewards. The ``goodness'' is measured in terms of discounted expected future returns (\ref{eq:returns}) and is encapsulated in the \textit{value function}. Of course the rewards the agent can expect to receive in the future depend on what actions it will take. Accordingly, value functions are defined with respect to particular policies. Formally, the value function is expressed as:
+Almost all solutions to reinforcement learning problems involve some estimation of the ``goodness'' of states. Intuitively this makes sense as we need some understanding of the reward dynamics before we could hope to find a policy that maximises these rewards. The ``goodness'' is measured in terms of discounted expected future returns (\ref{eq:returns}) and is encapsulated in the \textit{value function}. Of course the rewards the agent can expect to receive in the future depend on what actions it will take. Accordingly, value functions are defined with respect to particular policies. Formally, the value function is expressed as:
 
 \begin{equation}\label{eq:value_function}
-	v_\pi(s) = \mathbb{E}_\pi\left[ G_t \middle| S_t = s \right] = \mathbb{E}_\pi\left[ \sum_{k=0}^\infty \gamma^t R_{t + k + 1} \middle| S_t = s \right]
+	v_\pi(s) = \mathbb{E}_\pi\left[ G_t \middle| S_t = s \right] = \mathbb{E}_\pi\left[ \sum_{k=0}^T \gamma^t R_{t + k + 1} \middle| S_t = s \right]
 \end{equation}
 
 Similarly, we define the value of taking action $a$ in state $s$ under a policy $\pi$, denoted $q_\pi(s, a)$, as the expected return starting from $s$, taking the action $a$, and thereafter following policy $\pi$:
 
 \begin{equation}
-	q_\pi(s, a) = \mathbb{E}_\pi \left[ G_t  \middle| S_t = s, A_t = a\right] = \mathbb{E}_\pi \left[ \sum_{k=0}^\infty R_{t + k + 1} \middle| S_t = s, A_t = a\right]
+	q_\pi(s, a) = \mathbb{E}_\pi \left[ G_t  \middle| S_t = s, A_t = a\right] = \mathbb{E}_\pi \left[ \sum_{k=0}^T R_{t + k + 1} \middle| S_t = s, A_t = a\right]
 \end{equation}
 
 We will call $v_\pi$ the value of a state and the $q_\pi$ the q-value of a state-action pair.
 
 \
 
-The functions $v_\pi$ and $q_\pi$ can be estimated from experience. For example, if an agent follows policy $\pi$ and maintains an average, for each state encountered, of the actual returns that have followed that state, then the average will converge to the state’s value, $v_\pi(s)$, as the number of times that state is encountered approaches infinity. If separate averages are kept for each action taken in a state, then these averages will similarly converge to the action values, $q_\pi(s, a)$. We call estimation methods of this kind \textit{Monte Carlo methods} because they involve averaging over many random samples of actual returns. Of course, if there are very many states, then it may not be practical to keep separate averages for each state individually. Instead, the agent would have to maintain $v_\pi$ and $q_\pi$ as parameterised functions and adjust the parameters to better match the observed returns. This can also produce accurate estimates, although much depends on the nature of the parameterised function approximator. These methods will be covered in Section \ref{sec:deep_rl}.
+The functions $v_\pi$ and $q_\pi$ can be estimated from experience. For example, if an agent follows policy $\pi$ and maintains an average, for each state encountered, of the actual returns that have followed that state, then the average will converge to the state’s value, $v_\pi(s)$, as the number of times that state is encountered approaches infinity. If separate averages are kept for each action taken in a state, then these averages will similarly converge to the action values, $q_\pi(s, a)$. These estimation techniques are called \textit{Monte Carlo methods} because they involve averaging over many random samples of actual returns. Of course, if there are very many states, then it may not be practical to keep separate averages for each state individually. Instead, the agent would have to maintain $v_\pi$ and/or $q_\pi$ as parameterised functions and adjust the parameters to better match the observed returns. This can also produce accurate estimates, although much depends on the nature of the parameterised function approximator. These methods will be covered in Section \ref{sec:deep_rl}.
 
 \
 
-A fundamental property of value functions used throughout reinforcement learning and dynamic programming is that they satisfy particular recursive relationships. For any policy $\pi$ and any state $s$, the following consistency condition holds between the value of s and the value of its possible successor states:
+A fundamental property of value functions used throughout reinforcement learning is that they satisfy particular recursive relationships. For any policy $\pi$ and any state $s$, the following consistency condition holds between the value of s and the value of its possible successor states:
 
 \begin{equation}\label{eq:bellman_equation}
 	v_\pi(s) = \mathbb{E}_\pi [ G_t | S_t = s ] = \sum_a \sum_{s', r} p(s', r | s, a) \left[ r + \gamma v_\pi(s') \right]
@@ -232,19 +227,19 @@ Similarly, optimal policies share the same optimal q-value function, $q_*$:
 \end{equation}
 
 
-We have defined optimal value functions and optimal policies. Clearly, an agent that learns an optimal policy has done very well, but in practice this rarely happens. For the kinds of tasks in which we are interested, optimal policies can be generated only with extreme computational cost. However, a well-defined notion of optimality organises the reinforcement learning approaches described in this report and provides a way to understand the theoretical properties of various learning algorithms, but it is an ideal that agents can only approximate to varying degrees.
+We have defined optimal value functions and optimal policies. Clearly, an agent that learns an optimal policy has done very well, but in practice this rarely happens. For the kinds of tasks in which reinforcement learning is interested, optimal policies can be generated only with extreme computational cost. However, a well-defined notion of optimality organises the reinforcement learning approaches described in this report and provides a way to understand the theoretical properties of various learning algorithms, but it is an ideal that agents can only approximate to varying degrees.
 
 \subsection{Joint learning problem}
 
-What we have described using value function is a measure of the goodness of an agent's policy. However, we aim for this agent to have (or approach) an optimal policy described in the previous section. These represent two different problems. To learn the rewards dynamics of an environment given a policy, as well as learn what policy maximises rewards within that finite MDP. Solving this problem means that an agent could be dropped into an environment, learn how the environment works and solve the environment by finding the optimal policy. This is the lofty, but fundamental goal of reinforcement learning.
+What has been described using value function is a measure of the goodness of an agent's policy. However, we aim for this agent to have (or approach) an optimal policy described in the previous section. These represent two different problems. To learn the rewards dynamics of an environment given a policy, as well as learn what policy maximises rewards within that finite MDP. Solving this problem means that an agent could be dropped into an environment, learn how the environment works and solve the environment by finding the optimal policy. \citep{silver2015rl} This is the lofty, but fundamental goal of reinforcement learning.
 
 \
 
-The process of learning the value function given a policy is known as \textit{policy evaluation}, while the process of making that policy better is known as \textit{policy improvement}. The good news is that these processes are not exclusive of one another - if an agent has a good understanding of the reward landscape of an MDP, then it becomes easier to construct a good policy to solve that MDP.
+The process of learning the value function given a policy is known as \textit{policy evaluation}, while the process of making that policy better is known as \textit{policy improvement}. The good news is that these processes are not independent of one another - if an agent has a good understanding of the reward landscape of an MDP, then it becomes easier to construct a good policy to solve that MDP. \citep{silver2015rl}
 
 \
 
-If we were to consider a situation where the agent had a perfect model of the environmental state and reward dynamics, the simplest policy they can employ is a \textit{greedy policy} - meaning they always choose the action that obtains the highest value in the next state. In our assumption, we do not have a perfect model of the environment, therefore we need to continually explore the environment for alternative paths to our objective. This is known as a $\varepsilon$-greedy policy. This is written formally as:
+If we were to consider a situation where the agent had a perfect model of the environmental state and reward dynamics, the simplest policy they can employ is a \textit{greedy policy} - meaning they always choose the action that obtains the highest value in the next state. In our assumption, we do not have a perfect model of the environment, therefore we need to continually explore the environment for alternative paths to our objective. This is known as a $\varepsilon$-greedy policy. This is expressed formally as:
 
 \begin{equation}
 	\pi(a | s) = \begin{cases}
@@ -253,7 +248,7 @@ If we were to consider a situation where the agent had a perfect model of the en
 	\end{cases}
 \end{equation}
 
-This is a simple mechanism to ensure continual exploration in the MDP, that works surprisingly well. The most useful property of employing an $\varepsilon$-greedy policy is that for any $\varepsilon$-greedy policy $\pi$, the $\varepsilon$-greedy policy $\pi'$ with respect to $q_\pi$ is an improvement, $v_{\pi'}(s) \geq v_\pi(s)$:
+This is a simple mechanism to ensure continual exploration in the MDP, that works surprisingly well. A useful property of employing an $\varepsilon$-greedy policy is that for any $\varepsilon$-greedy policy $\pi$, the $\varepsilon$-greedy policy $\pi'$ with respect to $q_\pi$ is an improvement, $v_{\pi'}(s) \geq v_\pi(s)$:
 
 \begin{equation}
 \begin{aligned} 
@@ -266,7 +261,7 @@ This is a simple mechanism to ensure continual exploration in the MDP, that work
 \end{aligned}	
 \end{equation}
 
-What this means in the context of our joint learning problem is that we can use the $\varepsilon$-greedy algorithm to ensure exploration and allow the agent to learn the reward landscape in the MDP, as well as improve its policy. The idea is that these two processes will eventually converge to $q_*$ and $\pi_*$ the optimal q-value function and optimal policy respectively. This is visualised in Figure \ref{fig:eval_improvement}.
+What this means in the context of our joint learning problem is that we can use the $\varepsilon$-greedy algorithm to ensure exploration of the environment and its reward landscape, as well as improve its policy. The idea is that these two processes will eventually converge to $q_*$ and $\pi_*$ the optimal q-value function and optimal policy respectively. This is visualised in Figure \ref{fig:eval_improvement}.
 
 \begin{figure}
 	\centering
@@ -277,15 +272,15 @@ What this means in the context of our joint learning problem is that we can use 
 
 \subsection{Model-Based vs Model-Free}
 
-In general, reinforcement learning algorithms can be considered as model-free or model-based, through this line may sometimes be blurry. In model-based reinforcement learning the agent is learning a representation of the environmental dynamics, while in model-free reinforcement learning the agent is only tasked with learning the reward landscape in state-action space.
+In general, reinforcement learning algorithms can be considered as model-free or model-based (though this line may sometimes be blurry). In model-based reinforcement learning the agent is learning a representation of the environmental dynamics, while in model-free reinforcement learning the agent is only tasked with learning the reward landscape in state-action space.
 
 \
 
-A model in this case would be a representation of how the environmental states will react to action taken by the agent. In this, an agent would be able to query its own model of the environment with a chain of possible actions to then to able to plan multiple time-steps into the future. Though, the model-free techniques have the future rewards encoded into their value estimates, model-based reinforcement learning has found much success within the field. \citep{moerland2022model} In this report we will be exclusively focussing on model-free algorithms.
+A model in this case would be a representation of how the environmental states will react to action taken by the agent. In this, an agent would be able to query its own model of the environment with a chain of possible actions to then be able to plan multiple time-steps into the future. Though, the model-free techniques have the future rewards encoded into their value estimates, model-based reinforcement learning has found much success within the field. \citep{moerland2022model} In this report we will be exclusively focussing on model-free algorithms.
 
 \subsection{Example: Tabular q-learning}
 
-To illustrate a solution to a MDP with reinforcement learning, we will consider the Frozen Lake environment from OpenAI Gymnasium \citep{kwiatkowski2024gymnasium}. In this environment, an agent must navigate from a starting position to a goal position on a frozen grid, avoiding holes that would end the episode prematurely. The environment consists of a \(4 \times 4\) grid-world with the following specifications:
+To illustrate a solution to a MDP with reinforcement learning, we will consider the Frozen Lake environment from OpenAI \textit{Gymnasium} \citep{kwiatkowski2024gymnasium}. In this environment, an agent must navigate from a starting position to a goal position on a frozen grid, avoiding holes that would end the episode. The environment consists of a \(4 \times 4\) grid-world with the following specifications:
 
 \begin{itemize}
     \item \(\mathcal{S} = \{1, 2, \dots, 16\}\): The set of 16 possible states, each representing a unique cell on the grid.
@@ -306,21 +301,17 @@ To illustrate a solution to a MDP with reinforcement learning, we will consider 
 	\label{fig:frozen_lake}
 \end{figure}
 
-We will be using a tabular q-learning with a $\varepsilon$-greedy policy in order to solve this environment. What tabular q-learning requires is the storage of state-action values, in other words, we require a table of q-values. From the specifications of the environment, this will be a matrix of dimension $16 \times 4$. As depicted in Figure \ref{fig:eval_improvement} we require some starting point for our q-values, which we choose to be $0$. 
+We will be using a tabular q-learning with a $\varepsilon$-greedy policy in order to solve this environment. What tabular q-learning requires is the storage of state-action values estimates, in other words, we require a table of q-values. From the specifications of the environment, this will be a matrix of dimension $16 \times 4$. As depicted in Figure \ref{fig:eval_improvement} we require some starting point for our q-values, which we choose to be $0$.
 
 \
 
-Through experience, we seek to learn what actions we should take in particular states of the environment. Therefore, we define the following update equation based on the Bellman equation (for our q-value estimate) for a state-action pair:
+Through experience, we seek to learn what actions we should take in particular states of the environment. Therefore, we define the following update equation based on the Bellman equation for the value of the state-action pair:
 
 \begin{equation}\label{eq:q_update}
     q(s_t, a_t) \leftarrow r_t + \gamma  \max_{a' \in \mathcal{A}(s_{t+1})} q(s_{t+1}, a')
 \end{equation}
 
-This is the fundamental equation in the q-learning algorithm.
-
-\
-
-To demonstrate the learning of done by the agent we can plot a heat map of each state in the environment based on the q-value of the most rewarding action. Intuitively, we should see a heat map the depicts states near the reward state with a higher maximum value action. This is depicted in Figure \ref{fig:frozen_lake_q_learning}.
+To demonstrate the learning of done by the agent we can plot a heat map of each state in the environment based on the q-value of the most rewarding action. Intuitively, we should see a heat map the depicts states near the reward with a higher maximum  state-value action. This is depicted in Figure \ref{fig:frozen_lake_q_learning}.
 
 \begin{figure}[htp]
     \centering
@@ -334,7 +325,7 @@ To demonstrate the learning of done by the agent we can plot a heat map of each 
     \begin{subfigure}{0.3\textwidth}
         \centering
         \includegraphics[width=\linewidth]{images/frozen_100.png}
-        \caption{}
+        \caption{}	
         \label{fig:t100}
     \end{subfigure}
     \hfill
@@ -351,13 +342,15 @@ To demonstrate the learning of done by the agent we can plot a heat map of each 
 
 \
 
-In Figure \ref{fig:frozen_lake_q_learning}, we observe that through the random exploration of the environment the agent is able to find a corridor of high value actions seen in Figure \ref{fig:t100}. After an additional 100 episodes, the value of the actions in this corridor have been propagated throughout the environment, apart from the states that contain the obstacles. The difficulty of this environment is the sparsity of the rewards. The agent is only rewarded when getting to the goal, meaning that the only way the agent can make good decisions early is by bootstrapping the values that have been learned during the episodes. 
+In Figure \ref{fig:frozen_lake_q_learning}, we observe that through the random exploration of the environment the agent is able to find a corridor of high value actions seen in Figure \ref{fig:t100}. After an additional 100 episodes, the value of the actions in this corridor have been propagated throughout the environment, apart from the states that contain the obstacles. The difficulty of this environment is the sparsity of the rewards. The agent is only rewarded when getting to the goal, meaning that the only way the agent can make good decisions early in the episode is by bootstrapping the values that have been learned through random exploration.
 
 \
 
 Further, we can see that the greedy action in each state depicted in Figure (\ref{fig:t200}) describe a path through the environment that is optimal to get to the desired reward location, therefore we can say that this tabular q-learning algorithm has indeed solved this MDP with no prior knowledge about the environment or policy needed.
 
 \subsection{Deep RL Algorithms}\label{sec:deep_rl}
+
+%TODO: Up to here with the proof listening
 
 The problem with the approach of tabular learning is that the table that we use to store our estimates of the q-values soon becomes intractable as the state space and action space grow. A solution that has been used to solve this problem is using so-called ``deep'' methods. What this means is that we use neural networks as function approximators. What exactly these networks approximates can be the policy, q-values or values of the states. The salient point is that using these neural networks is that we no longer store large tables of data that are refined using experience with the environment - we use this experience to refine the set of parameters of our neural network which means the storage space of the machinery we use to solve these reinforcement learning problems does not grow significantly with increases to the state or action space.
 

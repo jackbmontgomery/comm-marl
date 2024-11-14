@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:00:43.946037+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:00:43.946126+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230043-ghd6vx8v/logs/debug-core.log"}
+{"time":"2024-11-13T23:00:44.055864+02:00","level":"INFO","msg":"created new stream","id":"ghd6vx8v"}
+{"time":"2024-11-13T23:00:44.055896+02:00","level":"INFO","msg":"stream: started","id":"ghd6vx8v"}
+{"time":"2024-11-13T23:00:44.055959+02:00","level":"INFO","msg":"sender: started","stream_id":"ghd6vx8v"}
+{"time":"2024-11-13T23:00:44.05592+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ghd6vx8v"}}
+{"time":"2024-11-13T23:00:44.05592+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"ghd6vx8v"}}
+{"time":"2024-11-13T23:00:44.494579+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:00:46.436692+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:00:46.436992+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:00:47.438504+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.663690833,"progress":"134B/134B"},{"desc":"saving job artifact","runtime_seconds":0.660085917},{"desc":"uploading config.yaml","runtime_seconds":0.335582417,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.335546916,"progress":"53B/53B"}],"total_operations":4}}
+{"time":"2024-11-13T23:00:48.531287+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:00:50.05739+02:00","level":"INFO","msg":"stream: closing","id":"ghd6vx8v"}
+{"time":"2024-11-13T23:00:50.057433+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"ghd6vx8v"}}
+{"time":"2024-11-13T23:00:50.057456+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ghd6vx8v"}}
+{"time":"2024-11-13T23:00:50.057532+02:00","level":"INFO","msg":"sender: closed","stream_id":"ghd6vx8v"}
+{"time":"2024-11-13T23:00:50.057763+02:00","level":"INFO","msg":"stream: closed","id":"ghd6vx8v"}

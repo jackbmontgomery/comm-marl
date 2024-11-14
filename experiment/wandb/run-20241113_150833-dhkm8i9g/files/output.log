@@ -1,0 +1,19 @@
+Run 1, train step 0/25000, elapsed time: 0.00 seconds
+Traceback (most recent call last):
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/main.py", line 63, in <module>
+    runner.run(N_EXPERIMENTS)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/runner.py", line 127, in run
+    self.agents.train(mini_batch, train_steps)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/agent/agent.py", line 169, in train
+    self.policy.learn(batch, max_episode_len, train_step, epsilon)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/algos/idql.py", line 87, in learn
+    q_evals, q_targets = self.get_q_values(batch, max_episode_len)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/algos/idql.py", line 167, in get_q_values
+    q_target, self.target_hidden = self.target_rnn(
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/.venv/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/param_share/network/base_net.py", line 73, in forward
+    obs = torch.cat((obs_aux, msgs_rec), dim=-1).reshape(
+KeyboardInterrupt

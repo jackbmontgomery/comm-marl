@@ -1,0 +1,17 @@
+{"time":"2024-11-14T06:21:56.140108+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T06:21:56.140211+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_062156-g7pz719f/logs/debug-core.log"}
+{"time":"2024-11-14T06:21:56.252088+02:00","level":"INFO","msg":"created new stream","id":"g7pz719f"}
+{"time":"2024-11-14T06:21:56.252121+02:00","level":"INFO","msg":"stream: started","id":"g7pz719f"}
+{"time":"2024-11-14T06:21:56.25215+02:00","level":"INFO","msg":"sender: started","stream_id":"g7pz719f"}
+{"time":"2024-11-14T06:21:56.252133+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"g7pz719f"}}
+{"time":"2024-11-14T06:21:56.252175+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"g7pz719f"}}
+{"time":"2024-11-14T06:21:56.662922+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T06:32:28.373954+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T06:32:28.375363+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T06:32:29.375216+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.23601875,"progress":"128B/128B"},{"desc":"saving job artifact","runtime_seconds":0.234622084}],"total_operations":2}}
+{"time":"2024-11-14T06:32:30.827901+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T06:32:32.236994+02:00","level":"INFO","msg":"stream: closing","id":"g7pz719f"}
+{"time":"2024-11-14T06:32:32.237041+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"g7pz719f"}}
+{"time":"2024-11-14T06:32:32.237073+02:00","level":"INFO","msg":"sender: closed","stream_id":"g7pz719f"}
+{"time":"2024-11-14T06:32:32.237062+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"g7pz719f"}}
+{"time":"2024-11-14T06:32:32.23725+02:00","level":"INFO","msg":"stream: closed","id":"g7pz719f"}

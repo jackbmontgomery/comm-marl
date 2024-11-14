@@ -47,7 +47,7 @@ def common_args():
     parser.add_argument(
         "--result_dir",
         type=str,
-        default="../result",
+        default="./result",
         help="result directory of the policy",
     )
     parser.add_argument(
@@ -74,7 +74,7 @@ def common_args():
 
     # if doing communication
     parser.add_argument(
-        "--with_comm", type=bool, default=True, help="whether to use communication"
+        "--with_comm", type=int, default=1, help="whether to use communication"
     )
     parser.add_argument(
         "--msg_cut", type=bool, default=False, help="whether to cut msg"
@@ -89,6 +89,8 @@ def common_args():
     )
 
     args = parser.parse_args()
+
+    args.with_comm = args.with_comm == 1
 
     return args
 

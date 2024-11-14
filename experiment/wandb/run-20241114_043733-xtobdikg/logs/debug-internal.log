@@ -1,0 +1,17 @@
+{"time":"2024-11-14T04:37:33.981756+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T04:37:33.981858+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_043733-xtobdikg/logs/debug-core.log"}
+{"time":"2024-11-14T04:37:34.094284+02:00","level":"INFO","msg":"created new stream","id":"xtobdikg"}
+{"time":"2024-11-14T04:37:34.094319+02:00","level":"INFO","msg":"stream: started","id":"xtobdikg"}
+{"time":"2024-11-14T04:37:34.094393+02:00","level":"INFO","msg":"sender: started","stream_id":"xtobdikg"}
+{"time":"2024-11-14T04:37:34.09432+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"xtobdikg"}}
+{"time":"2024-11-14T04:37:34.094327+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"xtobdikg"}}
+{"time":"2024-11-14T04:37:34.551753+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T04:44:37.927455+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T04:44:37.928335+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T04:44:38.930353+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.257844083,"progress":"133B/133B"},{"desc":"saving job artifact","runtime_seconds":0.256663666}],"total_operations":2}}
+{"time":"2024-11-14T04:44:40.44301+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T04:44:41.875521+02:00","level":"INFO","msg":"stream: closing","id":"xtobdikg"}
+{"time":"2024-11-14T04:44:41.875575+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"xtobdikg"}}
+{"time":"2024-11-14T04:44:41.875623+02:00","level":"INFO","msg":"sender: closed","stream_id":"xtobdikg"}
+{"time":"2024-11-14T04:44:41.875609+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"xtobdikg"}}
+{"time":"2024-11-14T04:44:41.875952+02:00","level":"INFO","msg":"stream: closed","id":"xtobdikg"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:04:44.035625+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:04:44.035705+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230444-h8o1g2jt/logs/debug-core.log"}
+{"time":"2024-11-13T23:04:44.146744+02:00","level":"INFO","msg":"created new stream","id":"h8o1g2jt"}
+{"time":"2024-11-13T23:04:44.146792+02:00","level":"INFO","msg":"stream: started","id":"h8o1g2jt"}
+{"time":"2024-11-13T23:04:44.146806+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"h8o1g2jt"}}
+{"time":"2024-11-13T23:04:44.146806+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"h8o1g2jt"}}
+{"time":"2024-11-13T23:04:44.146912+02:00","level":"INFO","msg":"sender: started","stream_id":"h8o1g2jt"}
+{"time":"2024-11-13T23:04:44.684371+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:04:47.358621+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:04:47.35892+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:04:48.360073+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.694769},{"desc":"uploading config.yaml","runtime_seconds":0.365112958,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.36509825,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:04:48.622639+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:04:50.043819+02:00","level":"INFO","msg":"stream: closing","id":"h8o1g2jt"}
+{"time":"2024-11-13T23:04:50.043856+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"h8o1g2jt"}}
+{"time":"2024-11-13T23:04:50.04389+02:00","level":"INFO","msg":"sender: closed","stream_id":"h8o1g2jt"}
+{"time":"2024-11-13T23:04:50.043875+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"h8o1g2jt"}}
+{"time":"2024-11-13T23:04:50.044117+02:00","level":"INFO","msg":"stream: closed","id":"h8o1g2jt"}

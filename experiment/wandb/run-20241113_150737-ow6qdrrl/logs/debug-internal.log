@@ -1,0 +1,17 @@
+{"time":"2024-11-13T15:07:37.56921+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T15:07:37.569298+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_150737-ow6qdrrl/logs/debug-core.log"}
+{"time":"2024-11-13T15:07:37.682689+02:00","level":"INFO","msg":"created new stream","id":"ow6qdrrl"}
+{"time":"2024-11-13T15:07:37.682724+02:00","level":"INFO","msg":"stream: started","id":"ow6qdrrl"}
+{"time":"2024-11-13T15:07:37.682753+02:00","level":"INFO","msg":"sender: started","stream_id":"ow6qdrrl"}
+{"time":"2024-11-13T15:07:37.68274+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ow6qdrrl"}}
+{"time":"2024-11-13T15:07:37.682741+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"ow6qdrrl"}}
+{"time":"2024-11-13T15:07:38.094306+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T15:08:26.790819+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T15:08:26.791202+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T15:08:27.792091+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.392258875},{"desc":"uploading wandb-summary.json","runtime_seconds":0.360035583,"progress":"137B/137B"},{"desc":"uploading config.yaml","runtime_seconds":0.065114708,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.065107084,"progress":"172B/172B"}],"total_operations":4}}
+{"time":"2024-11-13T15:08:28.779572+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T15:08:30.160375+02:00","level":"INFO","msg":"stream: closing","id":"ow6qdrrl"}
+{"time":"2024-11-13T15:08:30.160395+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"ow6qdrrl"}}
+{"time":"2024-11-13T15:08:30.160407+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ow6qdrrl"}}
+{"time":"2024-11-13T15:08:30.160415+02:00","level":"INFO","msg":"sender: closed","stream_id":"ow6qdrrl"}
+{"time":"2024-11-13T15:08:30.160604+02:00","level":"INFO","msg":"stream: closed","id":"ow6qdrrl"}

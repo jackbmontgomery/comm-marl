@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:00:34.793123+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:00:34.793204+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230034-i9zfpxkf/logs/debug-core.log"}
+{"time":"2024-11-13T23:00:34.904265+02:00","level":"INFO","msg":"created new stream","id":"i9zfpxkf"}
+{"time":"2024-11-13T23:00:34.904307+02:00","level":"INFO","msg":"stream: started","id":"i9zfpxkf"}
+{"time":"2024-11-13T23:00:34.904323+02:00","level":"INFO","msg":"sender: started","stream_id":"i9zfpxkf"}
+{"time":"2024-11-13T23:00:34.904368+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"i9zfpxkf"}}
+{"time":"2024-11-13T23:00:34.904316+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"i9zfpxkf"}}
+{"time":"2024-11-13T23:00:35.383877+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:00:37.42956+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:00:37.429883+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:00:38.431423+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.692443625},{"desc":"uploading config.yaml","runtime_seconds":0.358311792,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.358292083,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:00:39.189612+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:00:41.177618+02:00","level":"INFO","msg":"stream: closing","id":"i9zfpxkf"}
+{"time":"2024-11-13T23:00:41.177643+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"i9zfpxkf"}}
+{"time":"2024-11-13T23:00:41.177662+02:00","level":"INFO","msg":"sender: closed","stream_id":"i9zfpxkf"}
+{"time":"2024-11-13T23:00:41.177653+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"i9zfpxkf"}}
+{"time":"2024-11-13T23:00:41.177781+02:00","level":"INFO","msg":"stream: closed","id":"i9zfpxkf"}

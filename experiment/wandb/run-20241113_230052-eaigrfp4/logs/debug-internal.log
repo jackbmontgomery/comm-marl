@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:00:52.944997+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:00:52.94507+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230052-eaigrfp4/logs/debug-core.log"}
+{"time":"2024-11-13T23:00:53.055781+02:00","level":"INFO","msg":"created new stream","id":"eaigrfp4"}
+{"time":"2024-11-13T23:00:53.05582+02:00","level":"INFO","msg":"stream: started","id":"eaigrfp4"}
+{"time":"2024-11-13T23:00:53.055846+02:00","level":"INFO","msg":"sender: started","stream_id":"eaigrfp4"}
+{"time":"2024-11-13T23:00:53.055833+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"eaigrfp4"}}
+{"time":"2024-11-13T23:00:53.055933+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"eaigrfp4"}}
+{"time":"2024-11-13T23:00:53.493719+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:00:58.385095+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:00:58.385367+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:00:59.386393+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.720619125},{"desc":"uploading config.yaml","runtime_seconds":0.394776041,"progress":"1.5KB/1.5KB"}],"total_operations":2}}
+{"time":"2024-11-13T23:00:59.838225+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:01:01.249689+02:00","level":"INFO","msg":"stream: closing","id":"eaigrfp4"}
+{"time":"2024-11-13T23:01:01.249745+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"eaigrfp4"}}
+{"time":"2024-11-13T23:01:01.249779+02:00","level":"INFO","msg":"sender: closed","stream_id":"eaigrfp4"}
+{"time":"2024-11-13T23:01:01.249769+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"eaigrfp4"}}
+{"time":"2024-11-13T23:01:01.249972+02:00","level":"INFO","msg":"stream: closed","id":"eaigrfp4"}

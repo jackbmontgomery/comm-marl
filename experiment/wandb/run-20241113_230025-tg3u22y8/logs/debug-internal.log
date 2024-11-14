@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:00:25.253991+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:00:25.254087+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230025-tg3u22y8/logs/debug-core.log"}
+{"time":"2024-11-13T23:00:25.366388+02:00","level":"INFO","msg":"created new stream","id":"tg3u22y8"}
+{"time":"2024-11-13T23:00:25.366432+02:00","level":"INFO","msg":"stream: started","id":"tg3u22y8"}
+{"time":"2024-11-13T23:00:25.366458+02:00","level":"INFO","msg":"sender: started","stream_id":"tg3u22y8"}
+{"time":"2024-11-13T23:00:25.366442+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tg3u22y8"}}
+{"time":"2024-11-13T23:00:25.366493+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"tg3u22y8"}}
+{"time":"2024-11-13T23:00:26.023032+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:00:28.184583+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:00:28.18491+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:00:29.185178+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.675074791,"progress":"132B/132B"},{"desc":"saving job artifact","runtime_seconds":0.489186625},{"desc":"uploading config.yaml","runtime_seconds":0.162642584,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.162634875,"progress":"53B/53B"}],"total_operations":4}}
+{"time":"2024-11-13T23:00:30.448913+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:00:31.857093+02:00","level":"INFO","msg":"stream: closing","id":"tg3u22y8"}
+{"time":"2024-11-13T23:00:31.857133+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"tg3u22y8"}}
+{"time":"2024-11-13T23:00:31.857169+02:00","level":"INFO","msg":"sender: closed","stream_id":"tg3u22y8"}
+{"time":"2024-11-13T23:00:31.857161+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"tg3u22y8"}}
+{"time":"2024-11-13T23:00:31.857578+02:00","level":"INFO","msg":"stream: closed","id":"tg3u22y8"}

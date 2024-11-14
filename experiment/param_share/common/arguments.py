@@ -74,9 +74,7 @@ def common_args():
         "--cuda", type=bool, default=False, help="whether to use the GPU"
     )
     # if doing communication
-    parser.add_argument(
-        "--with_comm", type=bool, default=False, help="whether to commtest"
-    )
+    parser.add_argument("--with_comm", type=int, default=1, help="whether to commtest")
     parser.add_argument(
         "--msg_cut", type=bool, default=False, help="whether to cut msg"
     )
@@ -91,6 +89,8 @@ def common_args():
     parser.add_argument("--rnn_hidden_dim", type=int, default=64, help="rnn dims")
 
     args = parser.parse_args()
+
+    args.with_comm = args.with_comm == 1
 
     return args
 

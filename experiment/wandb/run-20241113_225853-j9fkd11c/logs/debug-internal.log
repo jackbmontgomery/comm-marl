@@ -1,0 +1,17 @@
+{"time":"2024-11-13T22:58:53.060685+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T22:58:53.060786+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_225853-j9fkd11c/logs/debug-core.log"}
+{"time":"2024-11-13T22:58:53.276608+02:00","level":"INFO","msg":"created new stream","id":"j9fkd11c"}
+{"time":"2024-11-13T22:58:53.27667+02:00","level":"INFO","msg":"stream: started","id":"j9fkd11c"}
+{"time":"2024-11-13T22:58:53.276728+02:00","level":"INFO","msg":"sender: started","stream_id":"j9fkd11c"}
+{"time":"2024-11-13T22:58:53.276694+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"j9fkd11c"}}
+{"time":"2024-11-13T22:58:53.276696+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"j9fkd11c"}}
+{"time":"2024-11-13T22:58:53.762319+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T22:58:59.964998+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T22:58:59.965318+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T22:59:01.370865+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T22:59:04.013652+02:00","level":"INFO","msg":"stream: closing","id":"j9fkd11c"}
+{"time":"2024-11-13T22:59:04.013711+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"j9fkd11c"}}
+{"time":"2024-11-13T22:59:04.013703+02:00","level":"WARN","msg":"sender: received Exit record more than once, ignoring"}
+{"time":"2024-11-13T22:59:04.013768+02:00","level":"INFO","msg":"sender: closed","stream_id":"j9fkd11c"}
+{"time":"2024-11-13T22:59:04.013733+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"j9fkd11c"}}
+{"time":"2024-11-13T22:59:04.014046+02:00","level":"INFO","msg":"stream: closed","id":"j9fkd11c"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-13T15:07:29.126529+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T15:07:29.126662+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_150729-emyl6me7/logs/debug-core.log"}
+{"time":"2024-11-13T15:07:29.237677+02:00","level":"INFO","msg":"created new stream","id":"emyl6me7"}
+{"time":"2024-11-13T15:07:29.237714+02:00","level":"INFO","msg":"stream: started","id":"emyl6me7"}
+{"time":"2024-11-13T15:07:29.237732+02:00","level":"INFO","msg":"sender: started","stream_id":"emyl6me7"}
+{"time":"2024-11-13T15:07:29.237795+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"emyl6me7"}}
+{"time":"2024-11-13T15:07:29.237723+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"emyl6me7"}}
+{"time":"2024-11-13T15:07:29.702391+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T15:07:31.230655+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T15:07:31.230986+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T15:07:32.233231+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.696755542},{"desc":"uploading config.yaml","runtime_seconds":0.352246583,"progress":"1.5KB/1.5KB"},{"desc":"uploading output.log","runtime_seconds":0.352223916,"progress":"52B/52B"}],"total_operations":3}}
+{"time":"2024-11-13T15:07:33.005556+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T15:07:34.465985+02:00","level":"INFO","msg":"stream: closing","id":"emyl6me7"}
+{"time":"2024-11-13T15:07:34.466014+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"emyl6me7"}}
+{"time":"2024-11-13T15:07:34.466044+02:00","level":"INFO","msg":"sender: closed","stream_id":"emyl6me7"}
+{"time":"2024-11-13T15:07:34.466031+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"emyl6me7"}}
+{"time":"2024-11-13T15:07:34.46616+02:00","level":"INFO","msg":"stream: closed","id":"emyl6me7"}

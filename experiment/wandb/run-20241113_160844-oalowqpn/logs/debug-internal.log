@@ -1,0 +1,17 @@
+{"time":"2024-11-13T16:08:44.039873+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T16:08:44.039925+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_160844-oalowqpn/logs/debug-core.log"}
+{"time":"2024-11-13T16:08:44.150154+02:00","level":"INFO","msg":"created new stream","id":"oalowqpn"}
+{"time":"2024-11-13T16:08:44.150201+02:00","level":"INFO","msg":"stream: started","id":"oalowqpn"}
+{"time":"2024-11-13T16:08:44.150217+02:00","level":"INFO","msg":"sender: started","stream_id":"oalowqpn"}
+{"time":"2024-11-13T16:08:44.150211+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"oalowqpn"}}
+{"time":"2024-11-13T16:08:44.150257+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"oalowqpn"}}
+{"time":"2024-11-13T16:08:44.61436+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T16:31:39.546744+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T16:31:39.548024+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T16:31:40.548897+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.162095875},{"desc":"saving job artifact","runtime_seconds":0.161110583}],"total_operations":2}}
+{"time":"2024-11-13T16:31:41.376674+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T16:31:42.803903+02:00","level":"INFO","msg":"stream: closing","id":"oalowqpn"}
+{"time":"2024-11-13T16:31:42.803965+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"oalowqpn"}}
+{"time":"2024-11-13T16:31:42.803988+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"oalowqpn"}}
+{"time":"2024-11-13T16:31:42.804008+02:00","level":"INFO","msg":"sender: closed","stream_id":"oalowqpn"}
+{"time":"2024-11-13T16:31:42.804246+02:00","level":"INFO","msg":"stream: closed","id":"oalowqpn"}

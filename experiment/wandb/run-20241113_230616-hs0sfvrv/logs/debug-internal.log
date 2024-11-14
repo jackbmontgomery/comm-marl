@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:06:16.178385+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:06:16.178511+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230616-hs0sfvrv/logs/debug-core.log"}
+{"time":"2024-11-13T23:06:16.289611+02:00","level":"INFO","msg":"created new stream","id":"hs0sfvrv"}
+{"time":"2024-11-13T23:06:16.28965+02:00","level":"INFO","msg":"stream: started","id":"hs0sfvrv"}
+{"time":"2024-11-13T23:06:16.289667+02:00","level":"INFO","msg":"sender: started","stream_id":"hs0sfvrv"}
+{"time":"2024-11-13T23:06:16.289667+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hs0sfvrv"}}
+{"time":"2024-11-13T23:06:16.289703+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"hs0sfvrv"}}
+{"time":"2024-11-13T23:06:17.498834+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:06:19.723149+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:06:19.723453+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:06:20.724717+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.672873917},{"desc":"uploading config.yaml","runtime_seconds":0.353569042,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.353551917,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:06:21.169301+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:06:22.573959+02:00","level":"INFO","msg":"stream: closing","id":"hs0sfvrv"}
+{"time":"2024-11-13T23:06:22.573981+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"hs0sfvrv"}}
+{"time":"2024-11-13T23:06:22.574002+02:00","level":"INFO","msg":"sender: closed","stream_id":"hs0sfvrv"}
+{"time":"2024-11-13T23:06:22.574001+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"hs0sfvrv"}}
+{"time":"2024-11-13T23:06:22.57418+02:00","level":"INFO","msg":"stream: closed","id":"hs0sfvrv"}

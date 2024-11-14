@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:10:36.685208+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:10:36.685351+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_231036-2ds3zrw1/logs/debug-core.log"}
+{"time":"2024-11-13T23:10:36.796647+02:00","level":"INFO","msg":"created new stream","id":"2ds3zrw1"}
+{"time":"2024-11-13T23:10:36.796686+02:00","level":"INFO","msg":"stream: started","id":"2ds3zrw1"}
+{"time":"2024-11-13T23:10:36.796719+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"2ds3zrw1"}}
+{"time":"2024-11-13T23:10:36.796708+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"2ds3zrw1"}}
+{"time":"2024-11-13T23:10:36.796777+02:00","level":"INFO","msg":"sender: started","stream_id":"2ds3zrw1"}
+{"time":"2024-11-13T23:10:37.227923+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:16:54.256936+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:16:54.258007+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:16:55.264014+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":0.676593083},{"desc":"uploading wandb-summary.json","runtime_seconds":0.232220458}],"total_operations":2}}
+{"time":"2024-11-13T23:16:56.731237+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:16:58.144224+02:00","level":"INFO","msg":"stream: closing","id":"2ds3zrw1"}
+{"time":"2024-11-13T23:16:58.144266+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"2ds3zrw1"}}
+{"time":"2024-11-13T23:16:58.144298+02:00","level":"INFO","msg":"sender: closed","stream_id":"2ds3zrw1"}
+{"time":"2024-11-13T23:16:58.144285+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"2ds3zrw1"}}
+{"time":"2024-11-13T23:16:58.14446+02:00","level":"INFO","msg":"stream: closed","id":"2ds3zrw1"}

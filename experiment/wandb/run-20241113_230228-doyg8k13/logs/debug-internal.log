@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:02:28.234531+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:02:28.23466+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230228-doyg8k13/logs/debug-core.log"}
+{"time":"2024-11-13T23:02:28.34609+02:00","level":"INFO","msg":"created new stream","id":"doyg8k13"}
+{"time":"2024-11-13T23:02:28.346133+02:00","level":"INFO","msg":"stream: started","id":"doyg8k13"}
+{"time":"2024-11-13T23:02:28.346184+02:00","level":"INFO","msg":"sender: started","stream_id":"doyg8k13"}
+{"time":"2024-11-13T23:02:28.346146+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"doyg8k13"}}
+{"time":"2024-11-13T23:02:28.346156+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"doyg8k13"}}
+{"time":"2024-11-13T23:02:28.794861+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:02:31.617003+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:02:31.617313+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:02:32.618442+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.702929417},{"desc":"uploading output.log","runtime_seconds":0.380258625,"progress":"53B/53B"}],"total_operations":2}}
+{"time":"2024-11-13T23:02:32.971206+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:02:34.584977+02:00","level":"INFO","msg":"stream: closing","id":"doyg8k13"}
+{"time":"2024-11-13T23:02:34.585049+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"doyg8k13"}}
+{"time":"2024-11-13T23:02:34.585084+02:00","level":"INFO","msg":"sender: closed","stream_id":"doyg8k13"}
+{"time":"2024-11-13T23:02:34.585083+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"doyg8k13"}}
+{"time":"2024-11-13T23:02:34.585409+02:00","level":"INFO","msg":"stream: closed","id":"doyg8k13"}

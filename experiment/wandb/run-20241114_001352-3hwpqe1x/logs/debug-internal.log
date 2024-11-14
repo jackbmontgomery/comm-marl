@@ -1,0 +1,34 @@
+{"time":"2024-11-14T00:13:52.331314+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T00:13:52.33136+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_001352-3hwpqe1x/logs/debug-core.log"}
+{"time":"2024-11-14T00:13:52.439703+02:00","level":"INFO","msg":"created new stream","id":"3hwpqe1x"}
+{"time":"2024-11-14T00:13:52.439749+02:00","level":"INFO","msg":"stream: started","id":"3hwpqe1x"}
+{"time":"2024-11-14T00:13:52.43982+02:00","level":"INFO","msg":"sender: started","stream_id":"3hwpqe1x"}
+{"time":"2024-11-14T00:13:52.439764+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"3hwpqe1x"}}
+{"time":"2024-11-14T00:13:52.439774+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"3hwpqe1x"}}
+{"time":"2024-11-14T00:13:52.857588+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T00:24:01.35019+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: operation timed out"}
+{"time":"2024-11-14T00:24:11.563787+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: operation timed out"}
+{"time":"2024-11-14T00:24:11.958942+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.3.137:56274->35.186.228.49:443: read: operation timed out"}
+{"time":"2024-11-14T00:24:44.044109+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-14T00:25:10.798199+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:25:18.718063+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-14T00:25:20.206292+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:32:37.899845+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:32:42.926901+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.3.137:56616->35.186.228.49:443: read: operation timed out"}
+{"time":"2024-11-14T00:32:42.963112+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:32:51.313733+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:32:54.361271+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:33:01.091443+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:33:10.155432+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:33:16.620707+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:33:32.96522+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/jackbmontgomery-university-of-cape-town/comm-marl/3hwpqe1x/file_stream\": dial tcp 35.186.228.49:443: connect: network is unreachable"}
+{"time":"2024-11-14T00:34:05.377501+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": context deadline exceeded (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2024-11-14T00:39:02.302764+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T00:39:02.303082+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T00:39:03.305529+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.278697167},{"desc":"uploading wandb-summary.json","runtime_seconds":0.243312292,"progress":"136B/136B"}],"total_operations":2}}
+{"time":"2024-11-14T00:39:04.791233+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T00:39:06.219739+02:00","level":"INFO","msg":"stream: closing","id":"3hwpqe1x"}
+{"time":"2024-11-14T00:39:06.219791+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"3hwpqe1x"}}
+{"time":"2024-11-14T00:39:06.219831+02:00","level":"INFO","msg":"sender: closed","stream_id":"3hwpqe1x"}
+{"time":"2024-11-14T00:39:06.219811+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"3hwpqe1x"}}
+{"time":"2024-11-14T00:39:06.220069+02:00","level":"INFO","msg":"stream: closed","id":"3hwpqe1x"}

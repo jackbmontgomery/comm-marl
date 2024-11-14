@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:05:32.35043+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:05:32.350505+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230532-b3lat9qo/logs/debug-core.log"}
+{"time":"2024-11-13T23:05:32.457518+02:00","level":"INFO","msg":"created new stream","id":"b3lat9qo"}
+{"time":"2024-11-13T23:05:32.457571+02:00","level":"INFO","msg":"stream: started","id":"b3lat9qo"}
+{"time":"2024-11-13T23:05:32.457649+02:00","level":"INFO","msg":"sender: started","stream_id":"b3lat9qo"}
+{"time":"2024-11-13T23:05:32.45758+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"b3lat9qo"}}
+{"time":"2024-11-13T23:05:32.457769+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"b3lat9qo"}}
+{"time":"2024-11-13T23:05:32.911347+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:05:37.814197+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:05:37.814507+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:05:38.816255+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.674225},{"desc":"uploading config.yaml","runtime_seconds":0.347550958,"progress":"1.5KB/1.5KB"},{"desc":"uploading output.log","runtime_seconds":0.3475055,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:05:39.125399+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:05:40.69088+02:00","level":"INFO","msg":"stream: closing","id":"b3lat9qo"}
+{"time":"2024-11-13T23:05:40.690946+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"b3lat9qo"}}
+{"time":"2024-11-13T23:05:40.690979+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"b3lat9qo"}}
+{"time":"2024-11-13T23:05:40.690998+02:00","level":"INFO","msg":"sender: closed","stream_id":"b3lat9qo"}
+{"time":"2024-11-13T23:05:40.691251+02:00","level":"INFO","msg":"stream: closed","id":"b3lat9qo"}

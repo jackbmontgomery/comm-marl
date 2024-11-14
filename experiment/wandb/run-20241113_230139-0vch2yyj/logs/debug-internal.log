@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:01:39.357773+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:01:39.357916+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230139-0vch2yyj/logs/debug-core.log"}
+{"time":"2024-11-13T23:01:39.47157+02:00","level":"INFO","msg":"created new stream","id":"0vch2yyj"}
+{"time":"2024-11-13T23:01:39.471613+02:00","level":"INFO","msg":"stream: started","id":"0vch2yyj"}
+{"time":"2024-11-13T23:01:39.47164+02:00","level":"INFO","msg":"sender: started","stream_id":"0vch2yyj"}
+{"time":"2024-11-13T23:01:39.471629+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"0vch2yyj"}}
+{"time":"2024-11-13T23:01:39.471671+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"0vch2yyj"}}
+{"time":"2024-11-13T23:01:40.076029+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:01:45.171026+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:01:45.171728+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:01:46.172809+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.698965916},{"desc":"uploading config.yaml","runtime_seconds":0.370949709,"progress":"1.5KB/1.5KB"},{"desc":"uploading output.log","runtime_seconds":0.370922667,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:01:47.232206+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:01:48.623711+02:00","level":"INFO","msg":"stream: closing","id":"0vch2yyj"}
+{"time":"2024-11-13T23:01:48.623752+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"0vch2yyj"}}
+{"time":"2024-11-13T23:01:48.623773+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"0vch2yyj"}}
+{"time":"2024-11-13T23:01:48.623867+02:00","level":"INFO","msg":"sender: closed","stream_id":"0vch2yyj"}
+{"time":"2024-11-13T23:01:48.624038+02:00","level":"INFO","msg":"stream: closed","id":"0vch2yyj"}

@@ -1,0 +1,17 @@
+{"time":"2024-11-14T05:23:34.884796+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T05:23:34.884928+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_052334-909nfsbr/logs/debug-core.log"}
+{"time":"2024-11-14T05:23:34.9978+02:00","level":"INFO","msg":"created new stream","id":"909nfsbr"}
+{"time":"2024-11-14T05:23:34.997833+02:00","level":"INFO","msg":"stream: started","id":"909nfsbr"}
+{"time":"2024-11-14T05:23:34.997869+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"909nfsbr"}}
+{"time":"2024-11-14T05:23:34.997936+02:00","level":"INFO","msg":"sender: started","stream_id":"909nfsbr"}
+{"time":"2024-11-14T05:23:34.997849+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"909nfsbr"}}
+{"time":"2024-11-14T05:23:35.436892+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T05:46:57.670385+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T05:46:57.67073+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T05:46:58.678555+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.239543208},{"desc":"saving job artifact","runtime_seconds":0.237705083}],"total_operations":2}}
+{"time":"2024-11-14T05:47:00.203733+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T05:47:01.708048+02:00","level":"INFO","msg":"stream: closing","id":"909nfsbr"}
+{"time":"2024-11-14T05:47:01.708092+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"909nfsbr"}}
+{"time":"2024-11-14T05:47:01.708132+02:00","level":"INFO","msg":"sender: closed","stream_id":"909nfsbr"}
+{"time":"2024-11-14T05:47:01.708123+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"909nfsbr"}}
+{"time":"2024-11-14T05:47:01.708437+02:00","level":"INFO","msg":"stream: closed","id":"909nfsbr"}

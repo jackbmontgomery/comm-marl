@@ -1,0 +1,17 @@
+{"time":"2024-11-13T23:02:37.448552+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-13T23:02:37.448638+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241113_230237-dhg1jicz/logs/debug-core.log"}
+{"time":"2024-11-13T23:02:37.561355+02:00","level":"INFO","msg":"created new stream","id":"dhg1jicz"}
+{"time":"2024-11-13T23:02:37.561401+02:00","level":"INFO","msg":"stream: started","id":"dhg1jicz"}
+{"time":"2024-11-13T23:02:37.561429+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"dhg1jicz"}}
+{"time":"2024-11-13T23:02:37.561409+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"dhg1jicz"}}
+{"time":"2024-11-13T23:02:37.561501+02:00","level":"INFO","msg":"sender: started","stream_id":"dhg1jicz"}
+{"time":"2024-11-13T23:02:38.066844+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-13T23:02:40.122638+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-13T23:02:40.122951+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-13T23:02:41.124684+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.603641667},{"desc":"uploading config.yaml","runtime_seconds":0.273409792,"progress":"1.7KB/1.7KB"},{"desc":"uploading output.log","runtime_seconds":0.2733825,"progress":"53B/53B"}],"total_operations":3}}
+{"time":"2024-11-13T23:02:41.470463+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-13T23:02:42.901984+02:00","level":"INFO","msg":"stream: closing","id":"dhg1jicz"}
+{"time":"2024-11-13T23:02:42.902022+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"dhg1jicz"}}
+{"time":"2024-11-13T23:02:42.902059+02:00","level":"INFO","msg":"sender: closed","stream_id":"dhg1jicz"}
+{"time":"2024-11-13T23:02:42.902046+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"dhg1jicz"}}
+{"time":"2024-11-13T23:02:42.902258+02:00","level":"INFO","msg":"stream: closed","id":"dhg1jicz"}

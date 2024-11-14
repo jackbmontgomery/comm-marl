@@ -1,0 +1,17 @@
+{"time":"2024-11-14T02:53:35.804453+02:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T02:53:35.804569+02:00","level":"INFO","msg":"created symlink","path":"/Users/jackmontgomery/Desktop/UCT/RL/comm-marl/experiment/wandb/run-20241114_025335-miplumvs/logs/debug-core.log"}
+{"time":"2024-11-14T02:53:35.916612+02:00","level":"INFO","msg":"created new stream","id":"miplumvs"}
+{"time":"2024-11-14T02:53:35.91665+02:00","level":"INFO","msg":"stream: started","id":"miplumvs"}
+{"time":"2024-11-14T02:53:35.916672+02:00","level":"INFO","msg":"sender: started","stream_id":"miplumvs"}
+{"time":"2024-11-14T02:53:35.916665+02:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"miplumvs"}}
+{"time":"2024-11-14T02:53:35.916749+02:00","level":"INFO","msg":"handler: started","stream_id":{"value":"miplumvs"}}
+{"time":"2024-11-14T02:53:36.338845+02:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-14T03:16:05.559569+02:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-14T03:16:05.559922+02:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-14T03:16:06.562441+02:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading wandb-summary.json","runtime_seconds":0.182800583},{"desc":"saving job artifact","runtime_seconds":0.074683917}],"total_operations":2}}
+{"time":"2024-11-14T03:16:07.439263+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-14T03:16:08.919007+02:00","level":"INFO","msg":"stream: closing","id":"miplumvs"}
+{"time":"2024-11-14T03:16:08.91905+02:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"miplumvs"}}
+{"time":"2024-11-14T03:16:08.919086+02:00","level":"INFO","msg":"sender: closed","stream_id":"miplumvs"}
+{"time":"2024-11-14T03:16:08.919071+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"miplumvs"}}
+{"time":"2024-11-14T03:16:08.919357+02:00","level":"INFO","msg":"stream: closed","id":"miplumvs"}
