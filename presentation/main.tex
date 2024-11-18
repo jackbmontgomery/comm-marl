@@ -3,6 +3,7 @@
 
 \usepackage{array}
 \usepackage{caption}
+\usepackage{subcaption}
 \usepackage{graphicx}
 \usepackage{xcolor}
 
@@ -66,6 +67,7 @@
 \slidenote{Sign language, inflection}
 \slidenote{finite lexicon with infinite utterances}	
 \slidenote{Norm Chomsky}
+\slidenote{Identify and classify}
 \end{frame}
 
 \begin{frame}{Dimensions of Comm-MARL}
@@ -141,6 +143,7 @@
 		\item NeurComm \citep{chu2020NeurComm}
 		\item HAMMER \citep{gupta2022HAMMER}
 	\end{enumerate}
+\note{Introduce brieflys}
 \slidenote{Differentiable and Reinforced Inter Agent Learning: Messages are output as part of a neural network}
 \slidenote{Communication Network: Messages are not explicitly output but rather average of the states of the neural network}
 \slidenote{Bidirectionally-Coordinated Networks: Bidirectional RNN hidden states passes forward then backward}
@@ -149,7 +152,7 @@
 \slidenote{Heterogeneous Agents Mastering Messaging to Enhance Reinforcement learning: PPO with a central communicator called a proxy}
 \end{frame}
 
-\begin{frame}{Commuicateee Types}
+\begin{frame}{Commuicatee Types}
 \begin{figure}
 	\centering
 	\includegraphics[scale=0.4]{images/communicatee.png}
@@ -199,7 +202,21 @@
 \slidenote{Formally show how the gradients will be calculated in this independent scheme}
 \end{frame}
 
-\begin{frame}{Results}
+\begin{frame}
+\begin{figure}
+     \centering
+     \begin{subfigure}[b]{0.6\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/PredatorPrey}
+         \caption{}
+     \end{subfigure}
+     \begin{subfigure}[b]{0.6\textwidth}
+         \centering
+         \includegraphics[width=\textwidth]{images/TrafficJunction}
+         \caption{}
+     \end{subfigure}
+\end{figure}
+\slidenote{Runtime: PS: 8 minutes, PS-COMM: 10 mins, NPS: 13 mins, NPS-COMM: 24 mins}
 \end{frame}
 
 
